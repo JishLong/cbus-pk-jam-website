@@ -1,0 +1,29 @@
+name: Create Builds
+
+on:
+  push:
+    branches:
+      - versions/**
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+#      - name: Set up Node.js
+#        uses: actions/setup-node@v3
+#        with:
+#          node-version: 20
+
+      - name: Install and Build
+        working-directory: client
+        run: npm ci && npm build
+
+      - name: Deploy to Builds Branch
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: client/dist
+          branch: builds/test
+          token: ${{ secrets.ACTIONS_TOKEN }}
