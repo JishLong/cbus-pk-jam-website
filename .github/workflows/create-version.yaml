@@ -1,0 +1,29 @@
+name: Create Version
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: >
+          The version that is being created, in the format of <year>.<major>.<minor>
+          (for example, 2025.2, or 2025.2.3)
+        required: true
+        type: string
+
+jobs:
+  create-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
+
+      - name: Create New Version Branch
+        run: |
+          VERSION_BRANCH="versions/${{ github.event.inputs.version }}"
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          git checkout -b "$VERSION_BRANCH"
+          git push origin "$VERSION_BRANCH"
