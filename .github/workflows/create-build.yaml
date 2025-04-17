@@ -1,13 +1,15 @@
 name: Create Build
 
 on:
+  create:
+    branches:
+      - versions/**
   push:
     branches:
       - versions/**
 
 jobs:
   create-build:
-    if: github.event.pull_request.merged == true || github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
