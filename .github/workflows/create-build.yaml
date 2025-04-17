@@ -1,0 +1,27 @@
+#name: Create Builds Branch
+#
+#on:
+#  push:
+#    branches:
+#      - 'versions/**'
+#
+#jobs:
+#  create-build-branch:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout the repository
+#        uses: actions/checkout@v4
+#        with:
+#          fetch-depth: 0  # Needed to check all branches
+#
+#      - name: Compute Version
+#        id: compute-version
+#        run: echo "version=${GITHUB_REF#refs/heads/versions/}" >> "$GITHUB_OUTPUT"
+#
+#      - name: Create Branch
+#        run: |
+#          if git show-ref --verify --quiet refs/remotes/origin/builds/${{ steps.compute-version.outputs.version }}; then
+#            git fetch origin main
+#            git checkout -b builds/${{ steps.compute-version.outputs.version }} origin/main
+#            git push origin builds/${{ steps.compute-version.outputs.version }}
+#          fi
