@@ -1,31 +1,31 @@
 name: Create Builds
 
 on:
-  pull_request:
-    types: [closed]
+  push:
     branches:
       - versions/**
 
 jobs:
   build:
-    if: github.event.pull_request.merged == true
+    if: github.event.pull_request.merged == true || github.event_name == 'push'
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-#      - name: Set up Node.js
-#        uses: actions/setup-node@v3
-#        with:
-#          node-version: 20
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
 
       - name: Install and Build
         working-directory: client
-        run: npm ci && npm build
+        run: npm install && npm run build:prod
 
       - name: Deploy to Builds Branch
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: client/dist
+          folder: client/dist/browser
           branch: builds/test
           token: ${{ secrets.ACTIONS_TOKEN }}
