@@ -2,6 +2,7 @@ name: Create Build
 
 on:
   create:
+  pull_request:
     branches:
       - versions/**
   push:
@@ -10,6 +11,10 @@ on:
 
 jobs:
   create-build:
+    if: |
+      (github.event_name == 'create' && github.ref_type == 'branch' && startsWith(github.ref, 'refs/heads/versions/'))
+      || (github.event_name == 'pull_request' && github.event.pull_request.merged == true)
+      || (github.event_name == 'push')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
