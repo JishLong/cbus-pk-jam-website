@@ -39,3 +39,9 @@ jobs:
     uses: ./.github/workflows/create-build.yaml
     with:
       version: ${{ github.event.inputs.version }}
+
+  bruh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: bruh
+        run: echo "bruh"
