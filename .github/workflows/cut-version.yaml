@@ -36,7 +36,6 @@ jobs:
           fi
 
   create-build:
-    needs: [ cut-version ]
     uses: ./.github/workflows/create-build.yaml
     with:
       version: ${{ github.event.inputs.version }}
