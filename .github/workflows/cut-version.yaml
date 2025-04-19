@@ -26,13 +26,13 @@ jobs:
         run: |
           VERSION_BRANCH_NAME="versions/${{ github.event.inputs.version }}"
           if git ls-remote --exit-code --heads origin "$VERSION_BRANCH_NAME"; then
+            echo "branch-created=false" >> $GITHUB_OUTPUT
+          else
             git config user.email "github-actions[bot]@users.noreply.github.com"
             git config user.name "github-actions[bot]"
             git checkout -b "$VERSION_BRANCH_NAME"
             git push origin "$VERSION_BRANCH_NAME"
             echo "branch-created=true" >> $GITHUB_OUTPUT
-          else
-            echo "branch-created=false" >> $GITHUB_OUTPUT
           fi
 
   create-build:
