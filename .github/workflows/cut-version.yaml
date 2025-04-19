@@ -36,6 +36,7 @@ jobs:
           fi
 
   create-build:
+    needs: cut-version
     uses: ./.github/workflows/testflow.yaml
     with:
       testinput: yee
