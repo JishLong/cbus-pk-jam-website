@@ -40,6 +40,7 @@ jobs:
     uses: ./.github/workflows/testflow.yaml
     with:
       testinput: ${{ needs.cut-version.outputs.branch-created }}
+    secrets: inherit
 
   bruh:
     runs-on: ubuntu-latest
