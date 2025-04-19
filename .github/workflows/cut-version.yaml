@@ -13,6 +13,8 @@ on:
 jobs:
   cut-version:
     runs-on: ubuntu-latest
+    outputs:
+      branch-created: ${{ steps.create-branch.outputs.branch-created }}
     steps:
       - name: Checkout main Branch
         uses: actions/checkout@v4
@@ -33,8 +35,9 @@ jobs:
             echo "branch-created=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Create Build
-        if: ${{ steps.create-branch.outputs.branch-created == 'true' }}
-        uses: JishLong/cbus-pk-jam-website/.github/workflows/create-build.yaml@main
-        with:
-          version: ${{ inputs.version }}
+  create-build:
+    needs: cut-version
+    if: needs.cut-version.outputs.branch-created == 'true'
+    uses: JishLong/cbus-pk-jam-website/.github/workflows/create-build.yaml@main
+    with:
+      version: ${{ inputs.version }}
