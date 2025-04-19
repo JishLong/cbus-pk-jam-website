@@ -14,7 +14,7 @@ jobs:
   cut-version:
     runs-on: ubuntu-latest
     outputs:
-      branch-created: ${{ steps.create-branch.outputs.branch-created }}
+      branch-created: ${{ steps.create-branch.outputs.branch-created == 'true' }}
     steps:
       - name: Checkout main Branch
         uses: actions/checkout@v4
@@ -36,7 +36,7 @@ jobs:
           fi
 
   create-build:
-    needs: cut-version
+    needs: [ cut-version ]
     if: needs.cut-version.outputs.branch-created == 'true'
     uses: JishLong/cbus-pk-jam-website/.github/workflows/create-build.yaml@main
     with:
