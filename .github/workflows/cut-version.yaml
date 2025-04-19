@@ -37,7 +37,6 @@ jobs:
 
   create-build:
     needs: [ cut-version ]
-    if: needs.cut-version.outputs.branch-created == 'true'
     uses: JishLong/cbus-pk-jam-website/.github/workflows/create-build.yaml@main
     with:
       version: ${{ inputs.version }}
