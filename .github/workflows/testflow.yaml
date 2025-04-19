@@ -11,6 +11,35 @@ on:
 jobs:
   my-job:
     runs-on: ubuntu-latest
+    if: (github.event_name == 'workflow_call')
     steps:
       - name: Compute Version
-        run: echo "hello${{ inputs.testinput }}"
+        id: compute-version
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_call" ]; then
+            echo "version=${{ inputs.testinput }}" >> $GITHUB_OUTPUT
+            echo "good"
+          else        
+            echo "bad"
+          fi
+
+      - name: Checkout versions/** Branch
+        uses: actions/checkout@v4
+        with:
+          ref: versions/${{ steps.compute-version.outputs.version }}
+
+      - name: Set Up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Build Angular Project
+        working-directory: client
+        run: npm install && npm run build:prod
+
+      - name: Deploy to Build Branch
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: builds/${{ steps.compute-version.outputs.version }}
+          folder: client/dist/browser
+          token: ${{ secrets.ACTIONS_TOKEN }}
