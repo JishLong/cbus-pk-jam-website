@@ -39,7 +39,7 @@ jobs:
     needs: cut-version
     uses: ./.github/workflows/testflow.yaml
     with:
-      testinput: yee
+      testinput: ${{ needs.cut-version.outputs.branch-created }}
 
   bruh:
     runs-on: ubuntu-latest
