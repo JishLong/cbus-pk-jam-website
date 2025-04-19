@@ -14,7 +14,7 @@ jobs:
   cut-version:
     runs-on: ubuntu-latest
     outputs:
-      branch-created: ${{ steps.create-branch.outputs.branch-created == 'true' }}
+      branch-created: ${{ steps.create-branch.outputs.branch-created }}
     steps:
       - name: Checkout main Branch
         uses: actions/checkout@v4
@@ -24,7 +24,7 @@ jobs:
       - name: Create New versions/** Branch
         id: create-branch
         run: |
-          VERSION_BRANCH_NAME="versions/${{ github.event.inputs.version }}"
+          VERSION_BRANCH_NAME="versions/${{ inputs.version }}"
           if git ls-remote --exit-code --heads origin "$VERSION_BRANCH_NAME"; then
             echo "branch-created=false" >> $GITHUB_OUTPUT
           else
@@ -37,13 +37,8 @@ jobs:
 
   create-build:
     needs: cut-version
-    uses: ./.github/workflows/testflow.yaml
+    if: ${{ needs.cut-version.outputs.branch-created }}
+    uses: ./.github/workflows/create-build.yaml
     with:
-      testinput: ${{ needs.cut-version.outputs.branch-created }}
+      version: ${{ inputs.version }}
     secrets: inherit
-
-  bruh:
-    runs-on: ubuntu-latest
-    steps:
-      - name: bruh
-        run: echo "bruh"
