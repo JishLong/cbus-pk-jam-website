@@ -1,0 +1,40 @@
+name: Cut Version
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: >
+          The version that is being cut, in the format of <year>.<major>
+          (for example, 2025.2). New minor versions should not be cut.
+        required: true
+        type: string
+
+jobs:
+  cut-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main Branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Create New versions/** Branch
+        id: create-branch
+        run: |
+          VERSION_BRANCH_NAME="versions/${{ github.event.inputs.version }}"
+          if git ls-remote --exit-code --heads origin "$VERSION_BRANCH_NAME"; then
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git config user.name "github-actions[bot]"
+            git checkout -b "$VERSION_BRANCH_NAME"
+            git push origin "$VERSION_BRANCH_NAME"
+            echo "branch-created=true" >> $GITHUB_OUTPUT
+          else
+            echo "branch-created=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Build
+        if: ${{ steps.create-branch.outputs.branch-created == 'true' }}
+        uses: JishLong/cbus-pk-jam-website/.github/workflows/create-build.yaml@main
+        with:
+          version: ${{ inputs.version }}
