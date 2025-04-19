@@ -38,7 +38,7 @@ jobs:
   create-build:
     uses: ./.github/workflows/testflow.yaml
     with:
-      version: yee
+      testinput: yee
 
   bruh:
     runs-on: ubuntu-latest
