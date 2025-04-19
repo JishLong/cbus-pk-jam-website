@@ -37,6 +37,6 @@ jobs:
 
   create-build:
     needs: [ cut-version ]
-    uses: JishLong/cbus-pk-jam-website/.github/workflows/create-build.yaml@main
+    uses: ./.github/workflows/create-build.yaml
     with:
-      version: ${{ inputs.version }}
+      version: ${{ github.event.inputs.version }}
