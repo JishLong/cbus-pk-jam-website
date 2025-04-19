@@ -8,6 +8,12 @@ on:
   push:
     branches:
       - versions/**
+  workflow_call:
+    inputs:
+      version:
+        description: The version from which to create the builds/** branch.
+        required: true
+        type: string
 
 jobs:
   create-build:
@@ -15,27 +21,35 @@ jobs:
       (github.event_name == 'create' && github.ref_type == 'branch' && startsWith(github.ref, 'refs/heads/versions/'))
       || (github.event_name == 'pull_request' && github.event.pull_request.merged == true)
       || (github.event_name == 'push')
+      || (github.event_name == 'workflow_call')
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Compute Version
+        id: compute-version
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_call" ]; then
+            echo "version=${{ inputs.version }}" >> $GITHUB_OUTPUT
+          else        
+            echo "version=${GITHUB_REF#refs/heads/versions/}" >> $GITHUB_OUTPUT
+          fi
 
-      - name: Set up Node.js
+      - name: Checkout versions/** Branch
+        uses: actions/checkout@v4
+        with:
+          ref: versions/${{ steps.compute-version.outputs.version }}
+
+      - name: Set Up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
 
-      - name: Install and Build
+      - name: Build Angular Project
         working-directory: client
         run: npm install && npm run build:prod
-
-      - name: Compute Build Branch Name
-        id: compute-build-branch-name
-        run: echo "build-branch-name=builds${GITHUB_REF#refs/heads/versions}" >> $GITHUB_OUTPUT
 
       - name: Deploy to Build Branch
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: ${{ steps.compute-build-branch-name.outputs.build-branch-name }}
+          branch: builds/${{ steps.compute-version.outputs.version }}
           folder: client/dist/browser
           token: ${{ secrets.ACTIONS_TOKEN }}
