@@ -52,4 +52,4 @@ jobs:
         with:
           branch: builds/${{ steps.compute-version.outputs.version }}
           folder: client/dist/browser
-          token: ${{ GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
