@@ -6,6 +6,7 @@ on:
       testinput:
         description: The version from which to create the builds/** branch.
         type: string
+        required: true
 
 jobs:
   my-job:
