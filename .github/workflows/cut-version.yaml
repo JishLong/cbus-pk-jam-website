@@ -36,9 +36,9 @@ jobs:
           fi
 
   create-build:
-    uses: ./.github/workflows/create-build.yaml
+    uses: ./.github/workflows/testflow.yaml
     with:
-      version: ${{ github.event.inputs.version }}
+      version: yee
 
   bruh:
     runs-on: ubuntu-latest

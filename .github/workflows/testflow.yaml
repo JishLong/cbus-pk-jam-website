@@ -1,0 +1,15 @@
+name: Test Flow
+
+on:
+  workflow_call:
+    inputs:
+      testinput:
+        description: The version from which to create the builds/** branch.
+        type: string
+
+jobs:
+  my-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Compute Version
+        run: echo "hello"
