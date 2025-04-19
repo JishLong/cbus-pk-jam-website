@@ -18,6 +18,7 @@ jobs:
       - name: Compute Version
         id: compute-version
         run: |
+          echo "${{ github.event_name }}"
           if [ "${{ github.event_name }}" = "workflow_call" ]; then
             echo "version=${{ inputs.testinput }}" >> $GITHUB_OUTPUT
             echo "good"
