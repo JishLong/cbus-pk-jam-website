@@ -1,0 +1,6 @@
+@use "sass:map";
+@use "./themes/2025" as chosenTheme;
+
+@function get-theme-colors() {
+  @return map.get(chosenTheme.$theme, theme-colors);
+}

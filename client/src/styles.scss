@@ -1,1 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+@use "sass:map";
+@use "theme/global-style-utils" as utils;
+@use "theme/theme" as theme;
+
+:root {
+  @include utils.create-vars(theme.get-theme-colors());
+}
