@@ -4,4 +4,5 @@
 
 :root {
   @include utils.create-vars(theme.get-theme-colors());
+  @include utils.create-vars(theme.get-spacing());
 }
