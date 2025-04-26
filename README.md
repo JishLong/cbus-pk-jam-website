@@ -8,15 +8,15 @@
     https://www.columbuspkjam.com/
 </p>
 <img src="assets/cpjRepoLogo.png">
-<h2 align="center">
+<h3 align="center">
     In Development for 2025!
-</h2>
+</h3>
 <p align="center">
     v2025.0
 </p>
-<h2 align="center">
+<h3 align="center">
     Active Planning 
     <a href="https://github.com/users/JishLong/projects/3/views/1">
         Here
     </a>
-</h2>
+</h3>
