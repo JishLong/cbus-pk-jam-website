@@ -1,0 +1,11 @@
+@use "sass:meta";
+
+@mixin create-vars($startingPoint, $name: "--cpj") {
+  @each $key, $value in $startingPoint {
+    @if meta.type-of($value) == "map" {
+      @include create-vars($value, #{$name}-#{$key});
+    } @else {
+      #{$name}-#{$key}: #{$value};
+    }
+  }
+}
