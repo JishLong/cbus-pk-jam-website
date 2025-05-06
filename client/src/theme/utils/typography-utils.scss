@@ -1,0 +1,16 @@
+@use "sass:list";
+@use "sass:map";
+
+@mixin add-typography-selectors($typography, $selectorList...) {
+  $selectors: ();
+
+  @each $selector in $selectorList {
+    $selectors: list.append($selectors, $selector, comma);
+  }
+
+  #{$selectors} {
+    @each $property, $value in $typography {
+      #{$property}: #{$value};
+    }
+  }
+}

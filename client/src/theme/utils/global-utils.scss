@@ -1,0 +1,31 @@
+@use "sass:meta";
+
+@mixin create-multi-property-classes($startingPoint) {
+  @each $class, $properties in $startingPoint {
+    .cpj-#{$class} {
+      @each $property, $value in $properties {
+        #{$property}: #{$value};
+      }
+    }
+  }
+}
+
+@mixin create-single-property-classes($startingPoint) {
+  @each $class, $properties in $startingPoint {
+    @each $property, $value in $properties {
+      .cpj-#{$class}-#{$property} {
+        #{$class}: #{$value};
+      }
+    }
+  }
+}
+
+@mixin create-vars($startingPoint, $stem: "--cpj") {
+  @each $key, $value in $startingPoint {
+    @if meta.type-of($value) == "map" {
+      @include create-vars($value, #{$stem}-#{$key});
+    } @else {
+      #{$stem}-#{$key}: #{$value};
+    }
+  }
+}
