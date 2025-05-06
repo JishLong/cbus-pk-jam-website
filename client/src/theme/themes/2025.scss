@@ -1,39 +1,23 @@
-@use "../colors" as colors;
+@use "../mappings/colors" as colors;
+@use "../mappings/spacing" as spacing;
+@use "../mappings/typography" as typography;
+@use "../utils/typography-utils" as typography-utils;
 
 $theme: (
   theme-colors: (
     main: colors.$orange,
   ),
   spacing: (
-    gap: (
-      0: 4px,
-      1: 8px,
-      2: 12px,
-      3: 16px,
-      4: 20px,
-      5: 24px,
-      6: 28px,
-      7: 32px,
-    ),
-    margin: (
-      0: 4px,
-      1: 8px,
-      2: 12px,
-      3: 16px,
-      4: 20px,
-      5: 24px,
-      6: 28px,
-      7: 32px,
-    ),
-    padding: (
-      0: 4px,
-      1: 8px,
-      2: 12px,
-      3: 16px,
-      4: 20px,
-      5: 24px,
-      6: 28px,
-      7: 32px,
-    ),
+    gap: spacing.$gap,
+    margin: spacing.$margin,
+    padding: spacing.$margin,
+  ),
+  typography: (
+    title-1: typography.$title-1,
+    title-2: typography.$title-2,
+    title-3: typography.$title-3,
+    body-1: typography.$body-1,
+    body-2: typography.$body-2,
+    body-3: typography.$body-3,
   ),
 );

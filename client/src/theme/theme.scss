@@ -1,10 +1,21 @@
 @use "sass:map";
 @use "./themes/2025" as chosenTheme;
+@use "./utils/global-utils" as global-utils;
+@use "./utils/typography-utils" as typography-utils;
 
-@function get-theme-colors() {
-  @return map.get(chosenTheme.$theme, theme-colors);
-}
+$spacing: map.get(chosenTheme.$theme, spacing);
+$theme-colors: map.get(chosenTheme.$theme, theme-colors);
+$typography: map.get(chosenTheme.$theme, typography);
 
-@function get-spacing() {
-  @return map.get(chosenTheme.$theme, spacing);
+:root {
+  @include global-utils.create-vars($spacing);
+  @include global-utils.create-single-property-classes($spacing);
+
+  @include global-utils.create-vars($theme-colors);
+
+  @include global-utils.create-multi-property-classes($typography);
+  @include typography-utils.add-typography-selectors(map.get($typography, title-1), h1);
+  @include typography-utils.add-typography-selectors(map.get($typography, title-2), h2);
+  @include typography-utils.add-typography-selectors(map.get($typography, title-3), h3);
+  @include typography-utils.add-typography-selectors(map.get($typography, body-1), "body");
 }
