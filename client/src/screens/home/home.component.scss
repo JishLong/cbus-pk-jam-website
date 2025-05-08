@@ -1,3 +1,9 @@
 .cpj-home {
   background: blue;
 }
+
+.cpj-breakpoint-desktop-landscape {
+  .cpj-home {
+    background: green;
+  }
+}
