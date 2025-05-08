@@ -35,7 +35,9 @@ export class ScreenResponsivenessService {
       });
 
       this.loggerService.log(
-        'ScreenResponsivenessService - active breakpoints set:', activeBreakpoints
+        'ScreenResponsivenessService',
+        `Active breakpoints set: ${activeBreakpoints.map(b => b.name).join(', ')}`,
+        activeBreakpoints,
       );
       this.activeBreakpoints.set(activeBreakpoints);
     });

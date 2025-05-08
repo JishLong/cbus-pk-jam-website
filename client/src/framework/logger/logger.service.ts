@@ -13,15 +13,23 @@ export class LoggerService {
     }
   }
 
-  error(message?: string, ...optionalParams: any[]) {
-    console.log(...getLogParams('error', message, optionalParams));
+  endGroup() {
+    console.groupEnd();
   }
 
-  log(message?: string, ...optionalParams: any[]) {
-    console.log(...getLogParams('log', message, optionalParams));
+  error(caller: string, message?: string, ...optionalParams: any[]) {
+    console.log(...getLogParams('error', caller, message, optionalParams));
   }
 
-  warn(message?: string, ...optionalParams: any[]) {
-    console.log(...getLogParams('warn', message, optionalParams));
+  log(caller: string, message?: string, ...optionalParams: any[]) {
+    console.log(...getLogParams('log', caller, message, optionalParams));
+  }
+
+  startGroup(...label: any[]) {
+    console.group(...label);
+  }
+
+  warn(caller: string, message?: string, ...optionalParams: any[]) {
+    console.log(...getLogParams('warn', caller, message, optionalParams));
   }
 }

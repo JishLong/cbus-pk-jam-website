@@ -3,9 +3,9 @@ export type LogLevel = 'error' | 'log' | 'warn';
 
 export const LOGGER_ENVIRONMENT: LoggerEnvironment = 'development';
 
-export function getLogParams(logLevel: LogLevel, message: any, optionalParams: any[]): any[] {
+export function getLogParams(logLevel: LogLevel, caller: string, message: any, optionalParams: any[]): any[] {
   return [
-    `%c[ Logger: ${logLevel} ] ${message}`,
+    `%c[ ${caller} ] ${message}`,
     getLogStyling(logLevel),
     ...optionalParams,
   ];
