@@ -13,6 +13,7 @@ $typography: map.get(chosenTheme.$theme, typography);
 
   @include global-utils.create-vars($theme-colors);
 
+  @include global-utils.create-vars($typography);
   @include global-utils.create-multi-property-classes($typography);
   @include typography-utils.add-typography-selectors(map.get($typography, title-1), h1);
   @include typography-utils.add-typography-selectors(map.get($typography, title-2), h2);
