@@ -1,7 +1,6 @@
 @use "../mappings/colors" as colors;
 @use "../mappings/spacing" as spacing;
 @use "../mappings/typography" as typography;
-@use "../utils/typography-utils" as typography-utils;
 
 $theme: (
   theme-colors: (
@@ -19,6 +18,6 @@ $theme: (
     body-1: typography.$body-1,
     body-2: typography.$body-2,
     body-3: typography.$body-3,
-    icons: typography.$icons,
+    icon: typography.$icon,
   ),
 );

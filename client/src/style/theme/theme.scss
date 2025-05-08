@@ -1,7 +1,7 @@
 @use "sass:map";
 @use "./themes/2025" as chosenTheme;
-@use "./utils/global-utils" as global-utils;
-@use "./utils/typography-utils" as typography-utils;
+@use "../utils/global-utils" as global-utils;
+@use "../utils/typography-utils" as typography-utils;
 
 $spacing: map.get(chosenTheme.$theme, spacing);
 $theme-colors: map.get(chosenTheme.$theme, theme-colors);

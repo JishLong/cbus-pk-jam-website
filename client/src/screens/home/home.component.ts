@@ -7,6 +7,9 @@ import {IconComponent} from '../../elements/icon/icon.component';
   styleUrl: 'home.component.scss',
   standalone: true,
   encapsulation: ViewEncapsulation.None,
+  host: {
+    class: 'cpj-home'
+  },
   imports: [IconComponent],
 })
 export class HomeComponent {
