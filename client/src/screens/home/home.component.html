@@ -1,10 +1,4 @@
-<h1 class="cpj-title-1">Columbus Parkour Jam</h1>
-asdfasdfsadf
+<h1 class="cpj-title-1">Locale: {{ locale() }}</h1>
 
-toggle_on
-
-<div class="cpj-gap-3" style="display: flex;">
-  <div>bruh</div>
-  <div>bruh</div>
-</div>
-<cpje-icon>home</cpje-icon>
+<button (click)="setUserLocale('en-US')">English</button>
+<button (click)="setUserLocale('es-MX')">Spanish</button>

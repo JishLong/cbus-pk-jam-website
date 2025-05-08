@@ -14,7 +14,7 @@ export class ScreenRoutingService {
     toObservable(this.currentScreen).pipe(
       takeUntilDestroyed(),
     ).subscribe(value => {
-      this.loggerService.log('ScreenRoutingService - current screen set to '.concat(value.name.slice(1)));
+      this.loggerService.log('ScreenRoutingService', 'Current screen set to '.concat(value.name.slice(1)));
     });
   }
 
