@@ -1,0 +1,15 @@
+:root {
+  .cpj-flex-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cpj-flex-grow {
+    flex-grow: 1;
+  }
+
+  .cpj-flex-row {
+    display: flex;
+    flex-direction: row;
+  }
+}

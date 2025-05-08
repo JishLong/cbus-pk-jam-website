@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from '../screens/home/home.component';
+import { ScreenWrapperComponent } from '../framework/screen-wrapper/screen-wrapper.component';
 
 export const routes: Routes = [
   {
     path: '**',
-    component: HomeComponent,
+    component: ScreenWrapperComponent,
   }
 ];

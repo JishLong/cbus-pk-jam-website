@@ -1,11 +1,11 @@
 import { Component, input, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'cpj-icon',
+  selector: 'cpje-icon',
   templateUrl: './icon.component.html',
   encapsulation: ViewEncapsulation.None,
   host: {
-    class: 'cpj-icon cpj-icons',
+    class: 'cpje-icon cpj-icon',
   },
 })
 export class IconComponent {
