@@ -1,5 +1,6 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import {Component, inject, ViewEncapsulation} from '@angular/core';
 import {IconComponent} from '../../elements/icon/icon.component';
+import {ScreenResponsivenessService} from '../../framework/screen-responsiveness/screen-responsiveness.service';
 
 @Component({
   selector: 'cpjs-home',
@@ -13,5 +14,4 @@ import {IconComponent} from '../../elements/icon/icon.component';
   imports: [IconComponent],
 })
 export class HomeComponent {
-
 }

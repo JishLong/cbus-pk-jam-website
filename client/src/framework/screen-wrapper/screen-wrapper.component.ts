@@ -1,6 +1,6 @@
 import { NgComponentOutlet } from '@angular/common';
 import { Component, inject,  ViewEncapsulation } from '@angular/core';
-import { ScreenRoutingService } from '../screen-service/screen-routing.service';
+import { ScreenRoutingService } from '../screen-routing/screen-routing.service';
 
 @Component({
   selector: 'cpjf-screen-wrapper',
