@@ -1,11 +1,13 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { inject, Injectable, RendererFactory2, Signal, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { LoggerService } from '../logger/logger.service';
 import { Breakpoint, BREAKPOINT_CLASS_PREFIX, BREAKPOINTS } from './screen-responsiveness.symbols';
 
 @Injectable({ providedIn: 'root' })
 export class ScreenResponsivenessService {
   private readonly breakpointObserver = inject(BreakpointObserver);
+  private readonly loggerService = inject(LoggerService);
   private readonly rendererFactory2 = inject(RendererFactory2);
   private readonly renderer2 = this.rendererFactory2.createRenderer(null, null);
 
@@ -30,8 +32,11 @@ export class ScreenResponsivenessService {
         } else if (bodyHasBreakpointClass) {
           this.renderer2.removeClass(document.body, breakpointClassName);
         }
-      })
+      });
 
+      this.loggerService.log(
+        'ScreenResponsivenessService - active breakpoints set:', activeBreakpoints
+      );
       this.activeBreakpoints.set(activeBreakpoints);
     });
   }
