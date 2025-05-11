@@ -1,0 +1,43 @@
+@let menuDropdown = useMenuDropdown();
+
+<div class="cpjf-nav-bar-top-wrapper cpj-flex-row cpj-title-3">
+
+  <div class="cpjf-nav-bar-section cpj-flex-row">
+    <cpje-instagram-button class="cpjf-nav-bar-instagram-button" />
+
+    @if (!menuDropdown) {
+      <div class="cpj-flex-row cpj-justify-end cpj-flex-grow cpj-align-center">
+        <a class="cpjf-nav-bar-link cpj-body-3 " [routerLink]="'/'">About</a>
+        <a class="cpjf-nav-bar-link cpj-body-3" [routerLink]="'/'">Sponsors</a>
+        <a class="cpjf-nav-bar-link cpj-body-3" [routerLink]="'/'">Special Guests</a>
+      </div>
+    }
+  </div>
+
+  <a class="cpjf-nav-bar-text cpjf-nav-bar-logo" [routerLink]="'/'">Columbus Jam</a>
+
+  @if (menuDropdown) {
+    <div class="cpjf-nav-bar-section cpj-flex-row cpj-justify-end cpj-align-center">
+      <cpje-icon-button [icon]="menuButtonIcon()" (onClick)="onMenuButtonClicked()" />
+    </div>
+  } @else {
+    <div class="cpjf-nav-bar-section cpj-flex-row cpj-align-center">
+      <a class="cpjf-nav-bar-link cpj-body-3" [routerLink]="'/'">Schedule / Spots</a>
+      <a class="cpjf-nav-bar-link cpj-body-3" [routerLink]="'/'">Registration</a>
+      <a class="cpjf-nav-bar-link cpj-body-3" [routerLink]="'/'">Contact</a>
+    </div>
+  }
+
+</div>
+
+@if (menuDropdown && menuDropdownOpen()) {
+  <div class="cpjf-nav-bar-bottom-wrapper cpj-flex-column cpj-align-center cpj-gap-4 cpj-padding-4">
+    <a class="cpjf-nav-bar-link cpj-title-3" [routerLink]="'/'">About</a>
+    <a class="cpjf-nav-bar-link cpj-title-3" [routerLink]="'/'">Sponsors</a>
+    <a class="cpjf-nav-bar-link cpj-title-3" [routerLink]="'/'">Special Guests</a>
+    <a class="cpjf-nav-bar-link cpj-title-3" [routerLink]="'/'">Schedule / Spots</a>
+    <a class="cpjf-nav-bar-link cpj-title-3" [routerLink]="'/'">Registration</a>
+    <a class="cpjf-nav-bar-link cpj-title-3" [routerLink]="'/'">Contact</a>
+  </div>
+}
+

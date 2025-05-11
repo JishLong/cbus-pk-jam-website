@@ -3,15 +3,24 @@
 @use "../utils/global-utils" as global-utils;
 @use "../utils/typography-utils" as typography-utils;
 
+$dimensionality: map.get(chosenTheme.$theme, dimensionality);
+$normal-colors: map.get(chosenTheme.$theme, normal-colors);
+$palette-colors: map.get(chosenTheme.$theme, palette-colors);
 $spacing: map.get(chosenTheme.$theme, spacing);
-$theme-colors: map.get(chosenTheme.$theme, theme-colors);
+$transitions: map.get(chosenTheme.$theme, transitions);
 $typography: map.get(chosenTheme.$theme, typography);
 
 :root {
+  @include global-utils.create-vars($dimensionality);
+
+  @include global-utils.create-vars($normal-colors);
+
+  @include global-utils.create-vars($palette-colors);
+
   @include global-utils.create-vars($spacing);
   @include global-utils.create-single-property-classes($spacing);
 
-  @include global-utils.create-vars($theme-colors);
+  @include global-utils.create-vars($transitions);
 
   @include global-utils.create-vars($typography);
   @include global-utils.create-multi-property-classes($typography);

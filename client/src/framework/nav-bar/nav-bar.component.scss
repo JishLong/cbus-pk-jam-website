@@ -1,0 +1,69 @@
+.cpjf-nav-bar {
+  --cpjf-nav-bar-top-wrapper-height: 24px;
+  --cpjf-nav-bar-link-normal-color: var(--cpj-main-dark-80);
+  --cpjf-nav-bar-link-hovered-color: var(--cpj-main-neutral);
+  --cpjf-nav-bar-link-active-color: var(--cpj-main-light-20);
+
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.cpjf-nav-bar-top-wrapper {
+  background: var(--cpj-main-dark-80);
+  height: var(--cpjf-nav-bar-top-wrapper-height);
+  padding: var(--cpj-padding-3) var(--cpj-padding-7);
+}
+
+.cpjf-nav-bar-section {
+  flex: 1;
+}
+
+.cpjf-nav-bar-instagram-button.cpje-instagram-button {
+  --cpje-instagram-button-width: var(--cpjf-nav-bar-top-wrapper-height);
+}
+
+.cpjf-nav-bar-link {
+  color: var(--cpjf-nav-bar-link-normal-color);
+  margin: 0 var(--cpj-margin-7);
+  text-decoration: none;
+  transition: color var(--cpj-transition-time-2);
+
+  &:hover {
+    color: var(--cpjf-nav-bar-link-hovered-color);
+  }
+
+  &:active {
+    color: var(--cpjf-nav-bar-link-active-color);
+  }
+}
+
+.cpjf-nav-bar-logo {
+  color: var(--cpj-main-light-80);
+  font-family: "Future Outrun Future", sans-serif;
+  font-size: var(--cpjf-nav-bar-top-wrapper-height);
+  margin: 0 var(--cpj-margin-7);
+  text-decoration: none;
+  transition: color var(--cpj-transition-time-2), transform var(--cpj-transition-time-2);
+
+  &:hover {
+    color: var(--cpj-main-neutral);
+    transform: scale(1.1);
+  }
+
+  &:active {
+    color: var(--cpj-main-dark-20);
+  }
+}
+
+.cpjf-nav-bar-bottom-wrapper {
+  background: var(--cpj-main-light-80);
+  border-radius: 0 0 var(--cpj-border-radius-3) var(--cpj-border-radius-3);
+  opacity: 0.75;
+}
+
+.cpj-breakpoint-desktop-landscape .cpjf-nav-bar {
+  --cpjf-nav-bar-link-normal-color: var(--cpj-main-light-80);
+  --cpjf-nav-bar-link-hovered-color: var(--cpj-main-neutral);
+  --cpjf-nav-bar-link-active-color: var(--cpj-main-dark-20);
+}

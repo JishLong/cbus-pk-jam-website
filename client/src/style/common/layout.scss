@@ -1,4 +1,8 @@
 :root {
+  .cpj-align-center {
+    align-items: center;
+  }
+
   .cpj-flex-column {
     display: flex;
     flex-direction: column;
@@ -11,5 +15,17 @@
   .cpj-flex-row {
     display: flex;
     flex-direction: row;
+  }
+
+  .cpj-justify-center {
+    justify-content: center;
+  }
+
+  .cpj-justify-end {
+    justify-content: flex-end;
+  }
+
+  .cpj-justify-start {
+    justify-content: flex-start;
   }
 }

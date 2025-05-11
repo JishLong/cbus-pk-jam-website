@@ -23,7 +23,7 @@ export class UserPrefsService {
   }
 
   setUserPref(userPref: string, value: any) {
-    this.loggerService.log('UserPrefsService', `Setting ${value[0]} to ${value[1]()}`);
+    this.loggerService.log('UserPrefsService', `Setting ${userPref} to ${value}`);
     localStorage.setItem(userPref, value);
     USER_PREFS[userPref].set(value);
   }

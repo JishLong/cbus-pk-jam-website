@@ -1,7 +1,9 @@
-import {Component, inject, ViewEncapsulation} from '@angular/core';
+import {Component, computed, inject, signal, ViewEncapsulation} from '@angular/core';
 import {IconComponent} from '../../elements/icon/icon.component';
 import {ScreenResponsivenessService} from '../../framework/screen-responsiveness/screen-responsiveness.service';
 import {UserPrefsService} from '../../framework/user-prefs/user-prefs.service';
+import {interval} from 'rxjs';
+import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'cpjs-home',
