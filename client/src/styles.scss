@@ -1,2 +1,6 @@
 @use "style/common/layout";
 @use "style/theme/theme";
+
+body, h1, h2, h3 {
+  margin: unset;
+}

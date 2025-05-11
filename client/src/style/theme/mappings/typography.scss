@@ -3,12 +3,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap');
 
+@font-face {
+  font-family: 'BlowBrush';
+  src: url('../../../../public/fonts/blowbrush.regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Future Outrun Future';
+  src: url('../../../../public/fonts/future.outrun-future-bold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 $title-1: (
   font-family: ("Oswald", sans-serif),
   font-size: 32px,
   font-weight: bold,
   line-height: 32px,
-  margin: unset,
 );
 
 $title-2: (
@@ -16,7 +28,6 @@ $title-2: (
   font-size: 28px,
   font-weight: bold,
   line-height: 28px,
-  margin: unset,
 );
 
 $title-3: (
@@ -24,7 +35,6 @@ $title-3: (
   font-size: 24px,
   font-weight: bold,
   line-height: 24px,
-  margin: unset,
 );
 
 $body-1: (
@@ -32,7 +42,6 @@ $body-1: (
   font-size: 24px,
   font-weight: normal,
   line-height: 24px,
-  margin: unset,
 );
 
 $body-2: (
@@ -40,15 +49,13 @@ $body-2: (
   font-size: 20px,
   font-weight: normal,
   line-height: 20px,
-  margin: unset,
 );
 
 $body-3: (
   font-family: ("Oswald", sans-serif),
   font-size: 16px,
   font-weight: normal,
-  line-height: 16px,
-  margin: unset,
+  line-height: 20px,
 );
 
 $icon: (
@@ -56,5 +63,4 @@ $icon: (
   font-size: inherit,
   font-weight: normal,
   line-height: inherit,
-  margin: unset,
 );

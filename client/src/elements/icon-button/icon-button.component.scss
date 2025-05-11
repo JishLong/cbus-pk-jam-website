@@ -1,0 +1,24 @@
+.cpje-icon-button {
+  --cpje-icon-button-normal-color: var(--cpj-main-light-80);
+  --cpje-icon-button-hover-color: var(--cpj-main-neutral);
+  --cpje-icon-button-active-color: var(--cpj-main-dark-20);
+
+  button {
+    all: unset;
+  }
+
+  cpje-icon {
+    color: var(--cpje-icon-button-normal-color);
+    cursor: pointer;
+    transition: color var(--cpj-transition-time-2);
+    width: var(--cpj-title-3-font-size);
+
+    &:hover {
+      color: var(--cpje-icon-button-hover-color);
+    }
+
+    &:active {
+      color: var(--cpje-icon-button-active-color);
+    }
+  }
+}

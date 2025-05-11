@@ -1,9 +1,90 @@
 .cpj-home {
-  background: blue;
+  //background-size: cover;
+  //background-position: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.background-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+
+.blue-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(#872b00, 0.5); /* transparent blue */
+  backdrop-filter: blur(10px);
+  z-index: -1;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  padding-top: 50px;
 }
 
 .cpj-breakpoint-desktop-landscape {
   .cpj-home {
-    background: green;
+
   }
+}
+
+.cpjf-nav-bar-locale {
+  color: white;
+}
+
+.cpjs-home-info {
+  z-index: 1;
+  width: 100%;
+  margin: auto;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25) 5%, rgba(255, 255, 255, 0.25) 95%, rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+}
+
+
+.cpj-home-info-border {
+  width: 100%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0));
+}
+
+.cpjs-home-logo {
+  font-family: "BlowBrush", sans-serif;
+  font-size: 200px;
+  background: linear-gradient(180deg, var(--cpj-orange-light-40), var(--cpj-red-dark-40));
+  background-clip: text;
+  color: transparent;
+  line-height: 200px;
+}
+
+.cpjs-home-date {
+  font-family: "BlowBrush", sans-serif;
+  font-size: 100px;
+  background: linear-gradient(180deg, var(--cpj-white), var(--cpj-gray-dark-40));
+  background-clip: text;
+  color: transparent;
+  line-height: 100px;
+}
+
+.cpj-home-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1; // Put the video behind everything
 }

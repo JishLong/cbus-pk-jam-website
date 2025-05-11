@@ -1,15 +1,36 @@
 @use "../mappings/colors" as colors;
+@use "../mappings/dimensionality" as dimensionality;
 @use "../mappings/spacing" as spacing;
+@use "../mappings/transitions" as transitions;
 @use "../mappings/typography" as typography;
 
 $theme: (
-  theme-colors: (
+  dimensionality: (
+    border: dimensionality.$border,
+  ),
+  normal-colors: (
+    red: colors.$red,
+    orange: colors.$orange,
+    yellow: colors.$yellow,
+    green: colors.$green,
+    blue: colors.$blue,
+    purple: colors.$purple,
+    pink: colors.$pink,
+    white: colors.$white,
+    gray: colors.$gray,
+    black: colors.$black,
+  ),
+  palette-colors: (
     main: colors.$orange,
+    neutral: colors.$gray,
   ),
   spacing: (
     gap: spacing.$gap,
     margin: spacing.$margin,
-    padding: spacing.$margin,
+    padding: spacing.$padding,
+  ),
+  transitions: (
+    transition-time: transitions.$transition-time,
   ),
   typography: (
     title-1: typography.$title-1,
