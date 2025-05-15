@@ -10,5 +10,5 @@ import { Component, ViewEncapsulation } from '@angular/core';
   },
 })
 export class InstagramButtonComponent {
-
+  protected readonly LINK = 'https://www.instagram.com/columbuspkjam/';
 }

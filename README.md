@@ -7,7 +7,7 @@
 <p align="center">
     https://www.columbuspkjam.com/
 </p>
-<img src="assets/cpjRepoLogo.png">
+<img src="assets/cpjLogo.png">
 <h3 align="center">
     In Development for 2025!
 </h3>

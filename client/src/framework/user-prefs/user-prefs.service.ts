@@ -6,7 +6,7 @@ import { USER_PREFS } from './user-prefs.symbols';
 export class UserPrefsService {
   private readonly loggerService = inject(LoggerService);
 
-  initializeUserPrefs() {
+  constructor() {
     Object.entries(USER_PREFS).forEach(value => {
       const userPref = localStorage.getItem(value[0]);
       if (userPref) {

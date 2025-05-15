@@ -1,12 +1,17 @@
-.cpje-instagram-button {
+:root {
+  --cpje-instagram-button-width: var(--cpj-body-1-font-size);
+
   --cpje-instagram-button-normal-color: var(--cpj-main-light-80);
   --cpje-instagram-button-hover-color: var(--cpj-main-neutral);
   --cpje-instagram-button-active-color: var(--cpj-main-dark-20);
-  --cpje-instagram-button-width: var(--cpj-body-1-font-size);
+}
+
+.cpje-instagram-button {
+  width: var(--cpje-instagram-button-width);
 
   fill: var(--cpje-instagram-button-normal-color);
+
   transition: fill var(--cpj-transition-time-2);
-  width: var(--cpje-instagram-button-width);
 
   &:hover {
     fill: var(--cpje-instagram-button-hover-color);

@@ -1,18 +1,37 @@
-.cpjf-nav-bar {
+@keyframes cpjf-nav-bar-fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+:root {
   --cpjf-nav-bar-top-wrapper-height: 24px;
+
   --cpjf-nav-bar-link-normal-color: var(--cpj-main-dark-80);
   --cpjf-nav-bar-link-hovered-color: var(--cpj-main-neutral);
   --cpjf-nav-bar-link-active-color: var(--cpj-main-light-20);
 
-  position: absolute;
-  top: 0;
+  .cpj-breakpoint-desktop-landscape .cpjf-nav-bar {
+    --cpjf-nav-bar-link-normal-color: var(--cpj-main-light-80);
+    --cpjf-nav-bar-link-hovered-color: var(--cpj-main-neutral);
+    --cpjf-nav-bar-link-active-color: var(--cpj-main-dark-20);
+  }
+}
+
+.cpjf-nav-bar {
   width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+
+  animation: cpjf-nav-bar-fade-in 1s both 1s;
 }
 
 .cpjf-nav-bar-top-wrapper {
-  background: var(--cpj-main-dark-80);
   height: var(--cpjf-nav-bar-top-wrapper-height);
+
   padding: var(--cpj-padding-3) var(--cpj-padding-7);
+
+  background: var(--cpj-main-dark-80);
 }
 
 .cpjf-nav-bar-section {
@@ -21,12 +40,16 @@
 
 .cpjf-nav-bar-instagram-button.cpje-instagram-button {
   --cpje-instagram-button-width: var(--cpjf-nav-bar-top-wrapper-height);
+
+  line-height: var(--cpjf-nav-bar-top-wrapper-height);
 }
 
 .cpjf-nav-bar-link {
-  color: var(--cpjf-nav-bar-link-normal-color);
   margin: 0 var(--cpj-margin-7);
+
+  color: var(--cpjf-nav-bar-link-normal-color);
   text-decoration: none;
+
   transition: color var(--cpj-transition-time-2);
 
   &:hover {
@@ -39,15 +62,18 @@
 }
 
 .cpjf-nav-bar-logo {
-  color: var(--cpj-main-light-80);
-  font-family: "Future Outrun Future", sans-serif;
-  font-size: var(--cpjf-nav-bar-top-wrapper-height);
   margin: 0 var(--cpj-margin-7);
+
+  font-size: var(--cpjf-nav-bar-top-wrapper-height);
+  line-height: var(--cpjf-nav-bar-top-wrapper-height);
+  color: var(--cpj-main-light-80);
   text-decoration: none;
+
   transition: color var(--cpj-transition-time-2), transform var(--cpj-transition-time-2);
 
   &:hover {
     color: var(--cpj-main-neutral);
+
     transform: scale(1.1);
   }
 
@@ -57,13 +83,8 @@
 }
 
 .cpjf-nav-bar-bottom-wrapper {
-  background: var(--cpj-main-light-80);
   border-radius: 0 0 var(--cpj-border-radius-3) var(--cpj-border-radius-3);
-  opacity: 0.75;
-}
 
-.cpj-breakpoint-desktop-landscape .cpjf-nav-bar {
-  --cpjf-nav-bar-link-normal-color: var(--cpj-main-light-80);
-  --cpjf-nav-bar-link-hovered-color: var(--cpj-main-neutral);
-  --cpjf-nav-bar-link-active-color: var(--cpj-main-dark-20);
+  background: var(--cpj-main-light-80);
+  opacity: 0.75;
 }
