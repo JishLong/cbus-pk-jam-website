@@ -1,9 +1,5 @@
-import {Component, computed, inject, signal, ViewEncapsulation} from '@angular/core';
-import {IconComponent} from '../../elements/icon/icon.component';
-import {ScreenResponsivenessService} from '../../framework/screen-responsiveness/screen-responsiveness.service';
-import {UserPrefsService} from '../../framework/user-prefs/user-prefs.service';
-import {interval} from 'rxjs';
-import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
+import { Component, ViewEncapsulation } from '@angular/core';
+import { IconComponent } from '../../elements/icon/icon.component';
 
 @Component({
   selector: 'cpjs-home',
@@ -12,15 +8,10 @@ import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
   standalone: true,
   encapsulation: ViewEncapsulation.None,
   host: {
-    class: 'cpj-home'
+    class: 'cpjs-home cpj-max-dimensions cpj-flex-column cpj-align-center'
   },
   imports: [IconComponent],
 })
 export class HomeComponent {
-  private readonly userPrefsService = inject(UserPrefsService);
-  readonly locale = this.userPrefsService.getUserPref('locale');
-
-  setUserLocale(locale: string) {
-    this.userPrefsService.setUserPref('locale', locale);
-  }
+  protected readonly ARROWS_ICON = 'keyboard_arrow_down'
 }

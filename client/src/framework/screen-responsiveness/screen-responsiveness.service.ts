@@ -7,9 +7,9 @@ import { Breakpoint, BREAKPOINT_CLASS_PREFIX, BREAKPOINTS } from './screen-respo
 @Injectable({ providedIn: 'root' })
 export class ScreenResponsivenessService {
   private readonly breakpointObserver = inject(BreakpointObserver);
-  private readonly loggerService = inject(LoggerService);
   private readonly rendererFactory2 = inject(RendererFactory2);
   private readonly renderer2 = this.rendererFactory2.createRenderer(null, null);
+  private readonly loggerService = inject(LoggerService);
 
   private readonly activeBreakpoints = signal<Breakpoint[]>([]);
 

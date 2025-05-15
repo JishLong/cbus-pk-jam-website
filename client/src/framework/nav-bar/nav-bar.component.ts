@@ -21,13 +21,13 @@ const MENU_OPENED_ICON = 'close';
 export class NavBarComponent {
   private readonly breakpoints = inject(ScreenResponsivenessService).getActiveBreakpoints();
 
+  protected readonly useMenuDropdown = computed(() =>
+    !this.breakpoints().some(b => b.name === 'desktop-landscape')
+  );
   protected readonly menuButtonIcon = computed(() =>
     this.menuDropdownOpen() ? MENU_OPENED_ICON : MENU_CLOSED_ICON
   );
   protected readonly menuDropdownOpen = signal(false);
-  protected readonly useMenuDropdown = computed(() =>
-    !this.breakpoints().some(b => b.name === 'desktop-landscape')
-  );
 
   protected onMenuButtonClicked() {
     this.menuDropdownOpen.update(value => !value);

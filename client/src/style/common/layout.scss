@@ -1,6 +1,7 @@
 :root {
-  .cpj-align-center {
-    align-items: center;
+  .cpj-max-dimensions {
+    width: 100%;
+    height: 100%;
   }
 
   .cpj-flex-column {
@@ -8,13 +9,20 @@
     flex-direction: column;
   }
 
+  .cpj-flex-row {
+    display: flex;
+  }
+
   .cpj-flex-grow {
     flex-grow: 1;
   }
 
-  .cpj-flex-row {
-    display: flex;
-    flex-direction: row;
+  .cpj-flex {
+    flex: 1;
+  }
+
+  .cpj-justify-start {
+    justify-content: flex-start;
   }
 
   .cpj-justify-center {
@@ -25,7 +33,11 @@
     justify-content: flex-end;
   }
 
-  .cpj-justify-start {
-    justify-content: flex-start;
+  .cpj-align-center {
+    align-items: center;
+  }
+
+  .cpj-align-end {
+    align-items: flex-end;
   }
 }

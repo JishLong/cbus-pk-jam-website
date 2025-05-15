@@ -1,66 +1,83 @@
 @import url('https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap');
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap');
 
 @font-face {
-  font-family: 'BlowBrush';
+  font-family: 'cpj-font-normal';
+  src: url('../../../../public/fonts/Oswald-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'cpj-font-script-1';
+  src: url('../../../../public/fonts/future.outrun-future-bold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'cpj-font-script-2';
   src: url('../../../../public/fonts/blowbrush.regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Future Outrun Future';
-  src: url('../../../../public/fonts/future.outrun-future-bold.otf') format('opentype');
+  font-family: 'cpj-font-icon';
+  src: url('../../../../public/fonts/MaterialIcons-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 $title-1: (
-  font-family: ("Oswald", sans-serif),
+  font-family: ("cpj-font-normal", sans-serif),
   font-size: 32px,
+  line-height: 48px,
   font-weight: bold,
-  line-height: 32px,
 );
 
 $title-2: (
-  font-family: ("Oswald", sans-serif),
+  font-family: ("cpj-font-normal", sans-serif),
   font-size: 28px,
+  line-height: 42px,
   font-weight: bold,
-  line-height: 28px,
 );
 
 $title-3: (
-  font-family: ("Oswald", sans-serif),
+  font-family: ("cpj-font-normal", sans-serif),
   font-size: 24px,
+  line-height: 36px,
   font-weight: bold,
-  line-height: 24px,
 );
 
 $body-1: (
-  font-family: ("Oswald", sans-serif),
+  font-family: ("cpj-font-normal", sans-serif),
   font-size: 24px,
+  line-height: 36px,
   font-weight: normal,
-  line-height: 24px,
 );
 
 $body-2: (
-  font-family: ("Oswald", sans-serif),
+  font-family: ("cpj-font-normal", sans-serif),
   font-size: 20px,
+  line-height: 30px,
   font-weight: normal,
-  line-height: 20px,
 );
 
 $body-3: (
-  font-family: ("Oswald", sans-serif),
+  font-family: ("cpj-font-normal", sans-serif),
   font-size: 16px,
+  line-height: 24px,
   font-weight: normal,
-  line-height: 20px,
+);
+
+$script-1: (
+  font-family: ("cpj-font-script-1", sans-serif),
+  font-weight: normal,
+);
+
+$script-2: (
+  font-family: ("cpj-font-script-2", sans-serif),
+  font-weight: normal,
 );
 
 $icon: (
-  font-family: ("Material Icons", sans-serif),
-  font-size: inherit,
+  font-family: ("cpj-font-icon", sans-serif),
   font-weight: normal,
-  line-height: inherit,
 );

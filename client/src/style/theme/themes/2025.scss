@@ -5,8 +5,9 @@
 @use "../mappings/typography" as typography;
 
 $theme: (
-  dimensionality: (
-    border: dimensionality.$border,
+  palette-colors: (
+    main: colors.$orange,
+    neutral: colors.$gray,
   ),
   normal-colors: (
     red: colors.$red,
@@ -20,18 +21,6 @@ $theme: (
     gray: colors.$gray,
     black: colors.$black,
   ),
-  palette-colors: (
-    main: colors.$orange,
-    neutral: colors.$gray,
-  ),
-  spacing: (
-    gap: spacing.$gap,
-    margin: spacing.$margin,
-    padding: spacing.$padding,
-  ),
-  transitions: (
-    transition-time: transitions.$transition-time,
-  ),
   typography: (
     title-1: typography.$title-1,
     title-2: typography.$title-2,
@@ -39,6 +28,19 @@ $theme: (
     body-1: typography.$body-1,
     body-2: typography.$body-2,
     body-3: typography.$body-3,
+    script-1: typography.$script-1,
+    script-2: typography.$script-2,
     icon: typography.$icon,
+  ),
+  spacing: (
+    gap: spacing.$gap,
+    margin: spacing.$margin,
+    padding: spacing.$padding,
+  ),
+  dimensionality: (
+    border: dimensionality.$border,
+  ),
+  transitions: (
+    transition-time: transitions.$transition-time,
   ),
 );
