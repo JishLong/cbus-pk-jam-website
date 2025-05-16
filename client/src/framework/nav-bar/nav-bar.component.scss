@@ -34,10 +34,6 @@
   background: var(--cpj-main-dark-80);
 }
 
-.cpjf-nav-bar-section {
-  flex: 1;
-}
-
 .cpjf-nav-bar-instagram-button.cpje-instagram-button {
   --cpje-instagram-button-width: var(--cpjf-nav-bar-top-wrapper-height);
 
@@ -45,10 +41,13 @@
 }
 
 .cpjf-nav-bar-link {
+  all: unset;
+
   margin: 0 var(--cpj-margin-7);
 
   color: var(--cpjf-nav-bar-link-normal-color);
   text-decoration: none;
+  cursor: pointer;
 
   transition: color var(--cpj-transition-time-2);
 
@@ -62,12 +61,15 @@
 }
 
 .cpjf-nav-bar-logo {
+  all: unset;
+
   margin: 0 var(--cpj-margin-7);
 
   font-size: var(--cpjf-nav-bar-top-wrapper-height);
   line-height: var(--cpjf-nav-bar-top-wrapper-height);
   color: var(--cpj-main-light-80);
   text-decoration: none;
+  cursor: pointer;
 
   transition: color var(--cpj-transition-time-2), transform var(--cpj-transition-time-2);
 

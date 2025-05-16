@@ -8,7 +8,7 @@ import { IconComponent } from '../../elements/icon/icon.component';
   standalone: true,
   encapsulation: ViewEncapsulation.None,
   host: {
-    class: 'cpjs-home cpj-max-dimensions cpj-flex-column cpj-align-center'
+    class: 'cpjs-home cpj-full-screen cpj-flex-column cpj-align-center'
   },
   imports: [IconComponent],
 })
