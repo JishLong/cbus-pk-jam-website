@@ -28,7 +28,20 @@
   100% { --cpjs-home-date-line-height-animated: calc(var(--cpjs-home-date-font-size) * 1.5); }
 }
 
-@keyframes cpjs-home-fade-in {
+@keyframes cpjs-home-date-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-50vw);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    filter: none;
+  }
+}
+
+@keyframes cpjs-home-arrows-fade-in {
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
@@ -90,7 +103,7 @@
 
 .cpjs-home-background {
   position: fixed;
-  z-index: -1;
+  z-index: -99;
 
   background-image: url("../../../public/images/cpj-home-background.gif");
   background-size: cover;
@@ -100,9 +113,9 @@
 
 .cpjs-home-background-overlay {
   position: fixed;
-  z-index: -1;
+  z-index: -99;
 
-  background-color: var(--cpj-main-light-70);
+  background: linear-gradient(to right, var(--cpj-main-light-70), var(--cpj-main-light-50));
   background-size: cover;
 
   animation: cpjs-home-background-overlay 1s 1s both;
@@ -135,7 +148,7 @@
 
   animation:
     cpjs-home-date-line-height 0.5s both 2s ease-in-out,
-    cpjs-home-fade-in 0.5s both 2.5s ease-in;
+    cpjs-home-date-fade-in 0.5s both 2.5s ease-in;
 }
 
 .cpjs-home-arrows {
@@ -158,12 +171,8 @@
 
   transition: transform var(--cpj-transition-time-3);
   animation:
-    cpjs-home-fade-in 0.5s both 4.5s,
+    cpjs-home-arrows-fade-in 0.5s both 4.5s,
     cpjs-home-arrows-gradient 4s infinite;
-
-  &:hover {
-    transform: scale(1.1);
-  }
 }
 
 .cpjs-home-arrows-background {

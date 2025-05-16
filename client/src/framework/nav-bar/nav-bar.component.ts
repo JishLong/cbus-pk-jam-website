@@ -1,4 +1,4 @@
-import { Component, computed, inject, signal, ViewEncapsulation } from '@angular/core';
+import {Component, computed, ElementRef, inject, input, signal, ViewEncapsulation} from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { IconComponent } from '../../elements/icon/icon.component';
 import { IconButtonComponent } from '../../elements/icon-button/icon-button.component';
@@ -31,5 +31,9 @@ export class NavBarComponent {
 
   protected onMenuButtonClicked() {
     this.menuDropdownOpen.update(value => !value);
+  }
+
+  protected navigateTo(id: string) {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   }
 }

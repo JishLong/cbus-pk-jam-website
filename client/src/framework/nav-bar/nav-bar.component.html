@@ -2,29 +2,29 @@
 
 <div class="cpjf-nav-bar-top-wrapper cpj-flex-row cpj-title-3">
 
-  <div class="cpjf-nav-bar-section cpj-flex-row">
+  <div class="cpj-flex cpj-flex-row">
     <cpje-instagram-button class="cpjf-nav-bar-instagram-button" />
 
     @if (!menuDropdown) {
       <div class="cpj-flex-row cpj-justify-end cpj-flex-grow cpj-align-center">
-        <a class="cpjf-nav-bar-link cpj-body-3" [routerLink]="'/'">Info</a>
-        <a class="cpjf-nav-bar-link cpj-body-3" [routerLink]="'/'">Sponsors</a>
-        <a class="cpjf-nav-bar-link cpj-body-3" [routerLink]="'/'">Special Guests</a>
+        <button class="cpjf-nav-bar-link cpj-body-3" (click)="navigateTo('nav-bar-info-location')">Info</button>
+        <button class="cpjf-nav-bar-link cpj-body-3" (click)="navigateTo('nav-bar-sponsors-location')">Sponsors</button>
+        <button class="cpjf-nav-bar-link cpj-body-3" (click)="navigateTo('nav-bar-special-guests-location')">Special Guests</button>
       </div>
     }
   </div>
 
-  <a class="cpjf-nav-bar-text cpjf-nav-bar-logo cpj-script-1" [routerLink]="'/'">Columbus Jam</a>
+  <button class="cpjf-nav-bar-logo cpj-script-1" (click)="navigateTo('nav-bar-home-location')">Columbus Jam</button>
 
   @if (menuDropdown) {
-    <div class="cpjf-nav-bar-section cpj-flex-row cpj-justify-end cpj-align-center">
+    <div class="cpj-flex-row cpj-flex cpj-justify-end cpj-align-center">
       <cpje-icon-button [icon]="menuButtonIcon()" (onClick)="onMenuButtonClicked()" />
     </div>
   } @else {
-    <div class="cpjf-nav-bar-section cpj-flex-row cpj-align-center">
-      <a class="cpjf-nav-bar-link cpj-body-3" [routerLink]="'/'">Schedule / Spots</a>
-      <a class="cpjf-nav-bar-link cpj-body-3" [routerLink]="'/'">Registration</a>
-      <a class="cpjf-nav-bar-link cpj-body-3" [routerLink]="'/'">Contact</a>
+    <div class="cpj-flex-row cpj-flex cpj-align-center">
+      <button class="cpjf-nav-bar-link cpj-body-3" (click)="navigateTo('nav-bar-schedule-location')">Schedule / Spots</button>
+      <button class="cpjf-nav-bar-link cpj-body-3" (click)="navigateTo('nav-bar-registration-location')">Registration</button>
+      <button class="cpjf-nav-bar-link cpj-body-3" (click)="navigateTo('nav-bar-contact-location')">Contact</button>
     </div>
   }
 
@@ -32,12 +32,12 @@
 
 @if (menuDropdown && menuDropdownOpen()) {
   <div class="cpjf-nav-bar-bottom-wrapper cpj-flex-column cpj-align-center cpj-gap-4 cpj-padding-4">
-    <a class="cpjf-nav-bar-link cpj-title-3" [routerLink]="'/'">About</a>
-    <a class="cpjf-nav-bar-link cpj-title-3" [routerLink]="'/'">Sponsors</a>
-    <a class="cpjf-nav-bar-link cpj-title-3" [routerLink]="'/'">Special Guests</a>
-    <a class="cpjf-nav-bar-link cpj-title-3" [routerLink]="'/'">Schedule / Spots</a>
-    <a class="cpjf-nav-bar-link cpj-title-3" [routerLink]="'/'">Registration</a>
-    <a class="cpjf-nav-bar-link cpj-title-3" [routerLink]="'/'">Contact</a>
+    <button class="cpjf-nav-bar-link cpj-title-3" (click)="navigateTo('nav-bar-info-location')">Info</button>
+    <button class="cpjf-nav-bar-link cpj-title-3" (click)="navigateTo('nav-bar-sponsors-location')">Sponsors</button>
+    <button class="cpjf-nav-bar-link cpj-title-3" (click)="navigateTo('nav-bar-special-guests-location')">Special Guests</button>
+    <button class="cpjf-nav-bar-link cpj-title-3" (click)="navigateTo('nav-bar-schedule-location')">Schedule / Spots</button>
+    <button class="cpjf-nav-bar-link cpj-title-3" (click)="navigateTo('nav-bar-registration-location')">Registration</button>
+    <button class="cpjf-nav-bar-link cpj-title-3" (click)="navigateTo('nav-bar-contact-location')">Contact</button>
   </div>
 }
 

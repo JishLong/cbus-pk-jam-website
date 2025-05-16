@@ -6,3 +6,17 @@
     display: none;
   }
 }
+
+.cpjf-screen-wrapper-home-separator {
+  width: 100vw;
+  height: calc(50vw * tan(5deg));
+
+  background: transparent;
+}
+
+.cpjf-screen-wrapper-contact-separator {
+  width: 100vw;
+  height: calc(50vw * tan(5deg));
+
+  background: linear-gradient(to right, var(--cpj-main-dark-70), var(--cpj-main-dark-50));
+}
