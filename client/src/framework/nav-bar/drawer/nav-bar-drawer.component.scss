@@ -1,0 +1,18 @@
+.cpjf-nav-bar-drawer {
+  z-index: -1;
+  overflow-y: auto;
+  overflow-x: clip;
+
+  border-radius: 0 0 var(--cpj-border-radius-3) var(--cpj-border-radius-3);
+  background: var(--cpjf-nav-bar-background-color);
+  transform: translateY(-100%);
+
+  transition:
+    box-shadow var(--cpj-transition-time-5) ease,
+    transform var(--cpj-transition-time-5) ease;
+}
+
+.cpjf-nav-bar-drawer-opened {
+  box-shadow: var(--cpjf-nav-bar-box-shadow);
+  transform: none;
+}

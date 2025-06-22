@@ -1,0 +1,12 @@
+<button
+  [cpjfNavigateTo]="navigateTo()"
+  class="cpj-fill-width cpj-flex-row cpj-gap-3 cpj-border-box cpj-title-3"
+  (click)="onClick.emit()"
+>
+  <ng-content />
+  @if (icon(); as icon) {
+    <div class="cpj-flex-row cpj-flex-grow cpj-justify-end">
+      <cpje-icon [icon]="icon" />
+    </div>
+  }
+</button>

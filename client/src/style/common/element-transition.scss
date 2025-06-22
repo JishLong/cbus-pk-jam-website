@@ -1,0 +1,30 @@
+$animation-speed: 0.5s;
+
+.cpj-element-transition-start-left {
+  opacity: 0;
+  transform: translateX(-10vw);
+  transition: opacity $animation-speed ease, transform $animation-speed ease;
+}
+
+.cpj-element-transition-start-right {
+  opacity: 0;
+  transform: translateX(10vw);
+  transition: opacity $animation-speed ease, transform $animation-speed ease;
+}
+
+.cpj-element-transition-start-big {
+  opacity: 0;
+  transform: scale(1.25);
+  transition: opacity $animation-speed ease, transform $animation-speed ease;
+}
+
+.cpj-element-transition-start-small {
+  opacity: 0;
+  transform: scale(0.75);
+  transition: opacity $animation-speed ease, transform $animation-speed ease;
+}
+
+.cpj-element-transition-end-default {
+  opacity: 1;
+  transform: none;
+}

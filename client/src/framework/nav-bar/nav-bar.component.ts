@@ -1,12 +1,13 @@
-import {Component, computed, ElementRef, inject, input, signal, ViewEncapsulation} from '@angular/core';
+import { Component, computed, inject, signal, ViewEncapsulation } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { IconComponent } from '../../elements/icon/icon.component';
 import { IconButtonComponent } from '../../elements/icon-button/icon-button.component';
 import { InstagramButtonComponent } from '../../elements/instagram-button/instagram-button.component';
+import { NavigateToDirective } from '../navigation/navigate-to.directive';
 import { ScreenResponsivenessService } from '../screen-responsiveness/screen-responsiveness.service';
+import { NavBarDrawerComponent } from './drawer/nav-bar-drawer.component';
 
-const MENU_CLOSED_ICON = 'menu';
-const MENU_OPENED_ICON = 'close';
+const DRAWER_CLOSED_ICON = 'menu';
+const DRAWER_OPENED_ICON = 'close';
 
 @Component({
   selector: 'cpjf-nav-bar',
@@ -14,26 +15,28 @@ const MENU_OPENED_ICON = 'close';
   styleUrl: 'nav-bar.component.scss',
   encapsulation: ViewEncapsulation.None,
   host: {
-    class: 'cpjf-nav-bar cpj-flex-column',
+    class: 'cpjf-nav-bar cpj-fill-width cpj-flex-column',
   },
-  imports: [IconButtonComponent, IconComponent, InstagramButtonComponent, RouterLink],
+  imports: [
+    IconButtonComponent,
+    InstagramButtonComponent,
+    NavBarDrawerComponent,
+    NavigateToDirective,
+    RouterLink
+  ],
 })
 export class NavBarComponent {
   private readonly breakpoints = inject(ScreenResponsivenessService).getActiveBreakpoints();
 
-  protected readonly useMenuDropdown = computed(() =>
+  protected readonly isMobile = computed(() =>
     !this.breakpoints().some(b => b.name === 'desktop-landscape')
   );
-  protected readonly menuButtonIcon = computed(() =>
-    this.menuDropdownOpen() ? MENU_OPENED_ICON : MENU_CLOSED_ICON
+  protected readonly drawerButtonIcon = computed(() =>
+    this.drawerOpened() ? DRAWER_OPENED_ICON : DRAWER_CLOSED_ICON
   );
-  protected readonly menuDropdownOpen = signal(false);
+  protected readonly drawerOpened = signal(false);
 
   protected onMenuButtonClicked() {
-    this.menuDropdownOpen.update(value => !value);
-  }
-
-  protected navigateTo(id: string) {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    this.drawerOpened.update(value => !value);
   }
 }

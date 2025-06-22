@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { IconComponent } from '../../elements/icon/icon.component';
+import { IconComponent } from '../../../elements/icon/icon.component';
 
 @Component({
   selector: 'cpjs-contact',
@@ -8,7 +8,7 @@ import { IconComponent } from '../../elements/icon/icon.component';
   standalone: true,
   encapsulation: ViewEncapsulation.None,
   host: {
-    class: 'cpjs-contact cpj-max-dimensions cpj-flex-column cpj-align-center'
+    class: 'cpjs-contact cpj-fill-dimensions cpj-flex-column cpj-align-center'
   },
   imports: [IconComponent],
 })

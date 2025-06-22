@@ -1,0 +1,49 @@
+:root {
+  --cpjs-landing-logo-font-size: 150px;
+  --cpjs-landing-logo-text-stroke: 4px;
+  --cpjs-landing-date-font-size: 75px;
+  --cpjs-landing-date-text-stroke: 3px;
+  --cpjs-landing-arrows-font-size: 75px;
+  --cpjs-landing-arrows-margin: var(--cpj-margin-7);
+
+  .cpj-breakpoint-tablet-landscape {
+    --cpjs-landing-logo-font-size: 125px;
+    --cpjs-landing-logo-text-stroke: 3px;
+    --cpjs-landing-date-font-size: 60px;
+    --cpjs-landing-date-text-stroke: 2px;
+  }
+
+  .cpj-breakpoint-desktop-portrait {
+    --cpjs-landing-logo-font-size: 110px;
+    --cpjs-landing-logo-text-stroke: 3px;
+    --cpjs-landing-date-font-size: 50px;
+    --cpjs-landing-date-text-stroke: 2px;
+  }
+
+  .cpj-breakpoint-tablet-portrait {
+    --cpjs-landing-logo-font-size: 80px;
+    --cpjs-landing-logo-text-stroke: 3px;
+    --cpjs-landing-date-font-size: 50px;
+    --cpjs-landing-date-text-stroke: 2px;
+    --cpjs-landing-arrows-font-size: 50px;
+    --cpjs-landing-arrows-margin: var(--cpj-margin-7);
+  }
+
+  .cpj-breakpoint-mobile-landscape {
+    --cpjs-landing-logo-font-size: 75px;
+    --cpjs-landing-logo-text-stroke: 2px;
+    --cpjs-landing-date-font-size: 35px;
+    --cpjs-landing-date-text-stroke: 2px;
+    --cpjs-landing-arrows-font-size: 40px;
+    --cpjs-landing-arrows-margin: var(--cpj-margin-1);
+  }
+
+  .cpj-breakpoint-mobile-portrait {
+    --cpjs-landing-logo-font-size: 65px;
+    --cpjs-landing-logo-text-stroke: 2px;
+    --cpjs-landing-date-font-size: 30px;
+    --cpjs-landing-date-text-stroke: 2px;
+    --cpjs-landing-arrows-font-size: 40px;
+    --cpjs-landing-arrows-margin: var(--cpj-margin-3);
+  }
+}
