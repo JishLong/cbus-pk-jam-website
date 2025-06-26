@@ -1,0 +1,79 @@
+:root {
+  --cpje-hex-snap-container-content-background: white;
+  --cpje-hex-snap-container-content-background-opacity: 1;
+  --cpje-hex-snap-container-angle: 5deg;
+
+  --cpje-hex-snap-container-min-height: calc(50vw * tan(var(--cpje-hex-snap-container-angle)));
+}
+
+.cpje-hex-snap-container {
+}
+
+.cpje-hex-snap-container-content {
+  position: relative;
+  min-height: var(--cpje-hex-snap-container-min-height);
+}
+
+.cpje-hex-snap-container-background-male,
+.cpje-hex-snap-container-background-female {
+  position: absolute;
+  z-index: -1;
+  overflow-x: clip;
+
+  background: var(--cpje-hex-snap-container-content-background);
+  opacity: var(--cpje-hex-snap-container-content-background-opacity);
+}
+
+.cpje-hex-snap-container-background-female,
+.cpje-hex-snap-container-background-male-left,
+.cpje-hex-snap-container-background-male-right {
+  &::before, &::after {
+    content: '';
+
+    position: absolute;
+    inset: 0;
+
+    background: inherit;
+  }
+}
+
+.cpje-hex-snap-container-background-male-left,
+.cpje-hex-snap-container-background-male-right {
+  position: absolute;
+  background: inherit;
+}
+
+.cpje-hex-snap-container-background-male-left {
+  &::before {
+    // Weird translateX to fitch a stitching issue
+    transform: translateX(calc(-1 * calc(50% - 1px))) skewY(calc(-1 * var(--cpje-hex-snap-container-angle)));
+  }
+
+  &::after {
+    transform: translateX(calc(-1 * calc(50% - 1px))) skewY(var(--cpje-hex-snap-container-angle));
+  }
+}
+
+.cpje-hex-snap-container-background-male-right {
+  &::before {
+    transform: translateX(50%) skewY(calc(-1 * var(--cpje-hex-snap-container-angle)));
+  }
+
+  &::after {
+    transform: translateX(50%) skewY(var(--cpje-hex-snap-container-angle));
+  }
+}
+
+.cpje-hex-snap-container-background-female {
+  &::before {
+    transform: skewY(calc(-1 * var(--cpje-hex-snap-container-angle)));
+  }
+
+  &::after {
+    transform: skewY(var(--cpje-hex-snap-container-angle));
+  }
+}
+
+.cpje-hex-snap-container-separator-space {
+  height: var(--cpje-hex-snap-container-min-height);
+}

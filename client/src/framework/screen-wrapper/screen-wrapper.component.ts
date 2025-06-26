@@ -1,20 +1,16 @@
-import {NgComponentOutlet} from '@angular/common';
-import {Component, inject, ViewEncapsulation} from '@angular/core';
-import { NavBarComponent } from '../nav-bar/nav-bar.component';
+import { NgComponentOutlet } from '@angular/common';
+import { Component, inject, ViewEncapsulation } from '@angular/core';
 import { ScreenRoutingService } from '../screen-routing/screen-routing.service';
-import { ContactComponent } from '../../screens/contact/contact.component';
-import { HomeComponent } from '../../screens/home/home.component';
-import { InfoComponent } from '../../screens/info/info.component';
 
 @Component({
   selector: 'cpjf-screen-wrapper',
-  templateUrl: 'screen-wrapper.component.html',
+  template: `<ng-container *ngComponentOutlet="currentScreen()" />`,
   styleUrl: 'screen-wrapper.component.scss',
   encapsulation: ViewEncapsulation.None,
   host: {
-    class: 'cpjf-screen-wrapper cpj-flex-column',
+    class: 'cpjf-screen-wrapper cpj-screen-dimensions',
   },
-  imports: [ContactComponent, HomeComponent, InfoComponent, NavBarComponent, NgComponentOutlet],
+  imports: [NgComponentOutlet],
 })
 export class ScreenWrapperComponent {
   protected readonly currentScreen = inject(ScreenRoutingService).getCurrentScreen();

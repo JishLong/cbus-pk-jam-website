@@ -1,0 +1,20 @@
+.cpjf-nav-bar-drawer {
+  top: calc(var(--cpjf-nav-bar-top-wrapper-height) + var(--cpj-padding-7));
+  max-height: calc(100vh - var(--cpjf-nav-bar-top-wrapper-height) - var(--cpj-padding-7));
+  overflow-y: auto;
+  overflow-x: clip;
+
+  border-radius: 0 0 var(--cpj-border-radius-3) var(--cpj-border-radius-3);
+  background: var(--cpjf-nav-bar-background-color);
+  transform: translateY(-100%);
+
+  transition:
+    box-shadow var(--cpj-transition-time-5) ease,
+    transform var(--cpj-transition-time-5) ease,
+    display 1s ease;
+}
+
+.cpjf-nav-bar-drawer-opened {
+  box-shadow: var(--cpjf-nav-bar-box-shadow);
+  transform: none;
+}

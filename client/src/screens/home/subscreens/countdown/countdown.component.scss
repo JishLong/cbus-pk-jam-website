@@ -1,0 +1,9 @@
+.cpjs-home-countdown-countdown-cells {
+  padding: 0 var(--cpj-gap-3);
+}
+
+.cpj-breakpoint-mobile-portrait {
+  .cpjs-home-countdown-countdown-cells {
+    gap: var(--cpj-gap-1);
+  }
+}

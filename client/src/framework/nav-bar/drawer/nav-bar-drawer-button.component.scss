@@ -1,0 +1,41 @@
+@property --cpjf-nav-bar-drawer-button-background-left {
+  syntax: '<color>';
+  initial-value: transparent;
+  inherits: false;
+}
+@property --cpjf-nav-bar-drawer-button-background-right {
+  syntax: '<color>';
+  initial-value: transparent;
+  inherits: false;
+}
+
+.cpjf-nav-bar-drawer-button button {
+  --cpjf-nav-bar-drawer-button-background-left: var(--cpj-main-light-70);
+  --cpjf-nav-bar-drawer-button-background-right: var(--cpj-main-light-60);
+
+  all: unset;
+  padding: var(--cpj-padding-1) var(--cpj-padding-3);
+  border-radius: var(--cpj-border-radius-max);
+
+  color: var(--cpj-main-dark-70);
+  background: linear-gradient(
+      to right,
+      var(--cpjf-nav-bar-drawer-button-background-left),
+      var(--cpjf-nav-bar-drawer-button-background-right)
+  );
+  transition:
+    --cpjf-nav-bar-drawer-button-background-left var(--cpj-transition-time-5),
+    --cpjf-nav-bar-drawer-button-background-right var(--cpj-transition-time-5);
+
+  &:hover {
+    --cpjf-nav-bar-drawer-button-background-left: var(--cpj-main-neutral);
+    --cpjf-nav-bar-drawer-button-background-right: var(--cpj-main-dark-10);
+
+    transition: none;
+  }
+
+  &:active {
+    --cpjf-nav-bar-drawer-button-background-left: var(--cpj-main-dark-20);
+    --cpjf-nav-bar-drawer-button-background-right: var(--cpj-main-dark-30);
+  }
+}

@@ -1,0 +1,22 @@
+@if (type() === 'male') {
+  <div class="cpjs-home-hex-snap-container-content cpj-position-relative cpj-fill-dimensions">
+    <div class="cpjs-home-hex-snap-container-background-male cpj-position-absolute cpj-z-index-behind cpj-fill-dimensions">
+      <div class="cpjs-home-hex-snap-container-background-male-left cpj-position-absolute cpj-fill-dimensions"></div>
+      <div class="cpjs-home-hex-snap-container-background-male-right cpj-position-absolute cpj-fill-dimensions"></div>
+    </div>
+    <ng-container *ngTemplateOutlet="content" />
+  </div>
+} @else if (type() === 'female') {
+  <div class="cpjs-home-hex-snap-container-separator-space"></div>
+
+  <div class="cpjs-home-hex-snap-container-content cpj-position-relative cpj-fill-dimensions">
+    <div class="cpjs-home-hex-snap-container-background-female cpj-position-absolute cpj-z-index-behind cpj-fill-dimensions"></div>
+    <ng-container *ngTemplateOutlet="content" />
+  </div>
+
+  <div class="cpjs-home-hex-snap-container-separator-space"></div>
+}
+
+<ng-template #content>
+  <ng-content />
+</ng-template>

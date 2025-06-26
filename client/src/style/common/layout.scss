@@ -1,53 +1,40 @@
-:root {
-  .cpj-zero-dimensions {
-    width: 0;
-    height: 0;
-  }
+.cpj-block {
+  display: block;
+}
 
-  .cpj-full-screen {
-    width: 100vw;
-    height: 100vh;
-  }
+.cpj-flex-row {
+  display: flex;
+}
 
-  .cpj-max-dimensions {
-    width: 100%;
-    height: 100%;
-  }
+.cpj-flex-column {
+  display: flex;
+  flex-direction: column;
+}
 
-  .cpj-flex-column {
-    display: flex;
-    flex-direction: column;
-  }
+.cpj-justify-start {
+  justify-content: flex-start;
+}
 
-  .cpj-flex-row {
-    display: flex;
-  }
+.cpj-justify-center {
+  justify-content: center;
+}
 
-  .cpj-flex-grow {
-    flex-grow: 1;
-  }
+.cpj-justify-end {
+  justify-content: flex-end;
+}
 
-  .cpj-flex {
-    flex: 1;
-  }
+.cpj-justify-space-between {
+  justify-content: space-between;
+}
 
-  .cpj-justify-start {
-    justify-content: flex-start;
-  }
+.cpj-align-center {
+  align-items: center;
+}
 
-  .cpj-justify-center {
-    justify-content: center;
-  }
+.cpj-align-end {
+  align-items: flex-end;
+}
 
-  .cpj-justify-end {
-    justify-content: flex-end;
-  }
-
-  .cpj-align-center {
-    align-items: center;
-  }
-
-  .cpj-align-end {
-    align-items: flex-end;
-  }
+.cpj-text-align-center {
+  text-align: center;
 }

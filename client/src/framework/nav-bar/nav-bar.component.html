@@ -1,43 +1,102 @@
-@let menuDropdown = useMenuDropdown();
+<div class="cpjf-nav-bar-top-wrapper cpj-flex-row">
+  <div class="cpj-flex-row">
+    <button
+      cpjeButton="ghost-light-text"
+      class="cpj-flex-row"
+      cpjeOpenLink="https://www.instagram.com/columbuspkjam/"
+    >
+      <cpje-svg type="instagram" dimensions="var(--cpjf-nav-bar-top-wrapper-height)" />
+    </button>
+  </div>
 
-<div class="cpjf-nav-bar-top-wrapper cpj-flex-row cpj-title-3">
-
-  <div class="cpj-flex cpj-flex-row">
-    <cpje-instagram-button class="cpjf-nav-bar-instagram-button" />
-
-    @if (!menuDropdown) {
-      <div class="cpj-flex-row cpj-justify-end cpj-flex-grow cpj-align-center">
-        <button class="cpjf-nav-bar-link cpj-body-3" (click)="navigateTo('nav-bar-info-location')">Info</button>
-        <button class="cpjf-nav-bar-link cpj-body-3" (click)="navigateTo('nav-bar-sponsors-location')">Sponsors</button>
-        <button class="cpjf-nav-bar-link cpj-body-3" (click)="navigateTo('nav-bar-special-guests-location')">Special Guests</button>
+  <div class="cpj-flex-row cpj-flex-grow cpj-justify-center cpj-align-center cpjf-nav-bar-double-gap">
+    @if (!isMobile()) {
+      <div class="cpjf-nav-bar-double-gap cpj-flex-row cpj-flex cpj-justify-end">
+        <button class="cpj-body-3" cpjeButton="ghost-light-text" cpjfNavigateTo="cpjf-navigation-marker-info">
+          Info
+        </button>
+        <button class="cpj-body-3" cpjeButton="ghost-light-text" cpjfNavigateTo="cpjf-navigation-marker-sponsors">
+          Sponsors
+        </button>
+        <button class="cpj-body-3" cpjeButton="ghost-light-text" cpjfNavigateTo="cpjf-navigation-marker-special-guests">
+          Special Guests
+        </button>
+      </div>
+    }
+    <button
+      class="cpjf-nav-bar-logo cpj-script-1"
+      cpjeButton="ghost-light-text"
+      cpjfNavigateTo="cpjf-navigation-marker-landing"
+    >
+      Columbus Jam
+    </button>
+    @if (!isMobile()) {
+      <div class="cpjf-nav-bar-double-gap cpj-flex-row cpj-flex">
+        <button class="cpj-body-3" cpjeButton="ghost-light-text" cpjfNavigateTo="cpjf-navigation-marker-schedule">
+          Schedule / Spots
+        </button>
+        <button class="cpj-body-3" cpjeButton="ghost-light-text" cpjfNavigateTo="cpjf-navigation-marker-registration">
+          Registration
+        </button>
+        <button class="cpj-body-3" cpjeButton="ghost-light-text" cpjfNavigateTo="cpjf-navigation-marker-contact">
+          Contact
+        </button>
       </div>
     }
   </div>
 
-  <button class="cpjf-nav-bar-logo cpj-script-1" (click)="navigateTo('nav-bar-home-location')">Columbus Jam</button>
-
-  @if (menuDropdown) {
-    <div class="cpj-flex-row cpj-flex cpj-justify-end cpj-align-center">
-      <cpje-icon-button [icon]="menuButtonIcon()" (onClick)="onMenuButtonClicked()" />
-    </div>
-  } @else {
-    <div class="cpj-flex-row cpj-flex cpj-align-center">
-      <button class="cpjf-nav-bar-link cpj-body-3" (click)="navigateTo('nav-bar-schedule-location')">Schedule / Spots</button>
-      <button class="cpjf-nav-bar-link cpj-body-3" (click)="navigateTo('nav-bar-registration-location')">Registration</button>
-      <button class="cpjf-nav-bar-link cpj-body-3" (click)="navigateTo('nav-bar-contact-location')">Contact</button>
-    </div>
-  }
-
+  <div class="cpj-flex-row cpj-justify-end cpj-align-center">
+    @if (isMobile()) {
+      <button cpjeButton="ghost-light-text" (click)="drawerOpened.set(!drawerOpened())">
+        <cpje-icon [icon]="drawerButtonIcon()" />
+      </button>
+    }
+  </div>
 </div>
 
-@if (menuDropdown && menuDropdownOpen()) {
-  <div class="cpjf-nav-bar-bottom-wrapper cpj-flex-column cpj-align-center cpj-gap-4 cpj-padding-4">
-    <button class="cpjf-nav-bar-link cpj-title-3" (click)="navigateTo('nav-bar-info-location')">Info</button>
-    <button class="cpjf-nav-bar-link cpj-title-3" (click)="navigateTo('nav-bar-sponsors-location')">Sponsors</button>
-    <button class="cpjf-nav-bar-link cpj-title-3" (click)="navigateTo('nav-bar-special-guests-location')">Special Guests</button>
-    <button class="cpjf-nav-bar-link cpj-title-3" (click)="navigateTo('nav-bar-schedule-location')">Schedule / Spots</button>
-    <button class="cpjf-nav-bar-link cpj-title-3" (click)="navigateTo('nav-bar-registration-location')">Registration</button>
-    <button class="cpjf-nav-bar-link cpj-title-3" (click)="navigateTo('nav-bar-contact-location')">Contact</button>
-  </div>
+@if (isMobile()) {
+  <cpjf-nav-bar-drawer [opened]="drawerOpened()">
+    <button class="cpjf-nav-bar-drawer-button"
+            cpjeButton="light"
+            cpjfNavigateTo="cpjf-navigation-marker-info"
+            (click)="drawerOpened.set(false)">
+      <span cpjPrefix>Info</span>
+      <cpje-icon cpjSuffix icon="info" />
+    </button>
+    <button class="cpjf-nav-bar-drawer-button"
+            cpjeButton="light"
+            cpjfNavigateTo="cpjf-navigation-marker-sponsors"
+            (click)="drawerOpened.set(false)">
+      <span cpjPrefix>Sponsors</span>
+      <cpje-icon cpjSuffix icon="favorite" />
+    </button>
+    <button class="cpjf-nav-bar-drawer-button"
+            cpjeButton="light"
+            cpjfNavigateTo="cpjf-navigation-marker-special-guests"
+            (click)="drawerOpened.set(false)">
+      <span cpjPrefix>Special Guests</span>
+      <cpje-icon cpjSuffix icon="person" />
+    </button>
+    <button class="cpjf-nav-bar-drawer-button cpjf-nav-bar-drawer-button-schedule"
+            cpjeButton="light"
+            cpjfNavigateTo="cpjf-navigation-marker-schedule"
+            (click)="drawerOpened.set(false)">
+      <span cpjPrefix>Schedule / Spots</span>
+      <cpje-icon cpjSuffix icon="park" />
+    </button>
+    <button class="cpjf-nav-bar-drawer-button"
+            cpjeButton="light"
+            cpjfNavigateTo="cpjf-navigation-marker-registration"
+            (click)="drawerOpened.set(false)">
+      <span cpjPrefix>Registration</span>
+      <cpje-icon cpjSuffix icon="sell" />
+    </button>
+    <button class="cpjf-nav-bar-drawer-button"
+            cpjeButton="light"
+            cpjfNavigateTo="cpjf-navigation-marker-contact"
+            (click)="drawerOpened.set(false)">
+      <span cpjPrefix>Contact</span>
+      <cpje-icon cpjSuffix icon="mail" />
+    </button>
+  </cpjf-nav-bar-drawer>
 }
-

@@ -1,17 +1,26 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { IconComponent } from '../../elements/icon/icon.component';
+import { HomeHexSnapContainer } from './elements/hex-snap-container/hex-snap-container';
+import { NavBarComponent } from '../../framework/nav-bar/nav-bar.component';
+import { CountdownComponent } from './subscreens/countdown/countdown.component';
+import { HomeInfoComponent } from './subscreens/info/info.component';
+import { HomeLandingComponent } from './subscreens/landing/landing.component';
+import { HomeSponsorsComponent } from './subscreens/sponsors/sponsors.component';
 
 @Component({
   selector: 'cpjs-home',
   templateUrl: 'home.component.html',
   styleUrl: 'home.component.scss',
-  standalone: true,
   encapsulation: ViewEncapsulation.None,
   host: {
-    class: 'cpjs-home cpj-full-screen cpj-flex-column cpj-align-center'
+    class: 'cpjs-home',
   },
-  imports: [IconComponent],
+  imports: [
+    CountdownComponent,
+    HomeHexSnapContainer,
+    HomeInfoComponent,
+    HomeLandingComponent,
+    HomeSponsorsComponent,
+    NavBarComponent,
+  ],
 })
-export class HomeComponent {
-  protected readonly ARROWS_ICON = 'keyboard_arrow_down'
-}
+export class HomeComponent {}

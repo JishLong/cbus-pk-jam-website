@@ -1,0 +1,22 @@
+.cpjs-home-sponsors-altitude-logo-image {
+  border-radius: var(--cpj-border-radius-3);
+  overflow: clip;
+
+  background-image: url("../../../../../public/images/altitude-logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 100%;
+}
+
+.cpj-breakpoint-mobile-portrait,
+.cpj-breakpoint-tablet-portrait,
+.cpj-breakpoint-desktop-portrait,
+.cpj-breakpoint-mobile-landscape {
+  .cpjs-home-sponsors-title-wrapper {
+    flex-direction: column-reverse;
+  }
+
+  .cpjs-home-sponsors-content-wrapper {
+    flex-direction: column-reverse;
+  }
+}
