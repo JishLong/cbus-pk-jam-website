@@ -21,6 +21,7 @@ $transitions: map.get(chosenTheme.$theme, transitions);
   @include typography-utils.add-typography-selectors(map.get($typography, title-2), h2);
   @include typography-utils.add-typography-selectors(map.get($typography, title-3), h3);
   @include typography-utils.add-typography-selectors(map.get($typography, body-1), "body");
+  @include typography-utils.add-typography-selectors(map.get($typography, body-1), "button");
 
   @include global-utils.create-vars($spacing);
   @include global-utils.create-single-property-classes($spacing);

@@ -5,7 +5,7 @@
     @if meta.type-of($value) == "map" {
       @include create-vars($value, #{$stem}-#{$key});
     } @else {
-      #{$stem}-#{$key}: #{$value};
+      #{$stem}-#{"" + $key}: #{$value};
     }
   }
 }

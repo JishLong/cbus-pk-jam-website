@@ -1,0 +1,25 @@
+.cpjs-home-fitted-image-image-wrapper {
+  position: relative;
+  overflow: clip;
+  border-radius: var(--cpj-border-radius-3);
+  box-shadow: inset 0 0 4px 1px var(--cpj-black);
+}
+
+.cpjs-home-fitted-image-image {
+  position: absolute;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.cpj-breakpoint-mobile-portrait,
+.cpj-breakpoint-tablet-portrait,
+.cpj-breakpoint-desktop-portrait,
+.cpj-breakpoint-mobile-landscape {
+  .cpjs-home-fitted-image {
+    width: 100%;
+  }
+
+  .cpjs-home-fitted-image-image {
+    position: static;
+  }
+}

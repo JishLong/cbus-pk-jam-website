@@ -1,11 +1,10 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { HomeHexSnapContainer } from './elements/hex-snap-container/hex-snap-container';
 import { NavBarComponent } from '../../framework/nav-bar/nav-bar.component';
-import { ContactComponent } from './contact/contact.component';
-import { InfoComponent } from './info/info.component';
-import { LandingComponent } from './landing/landing.component';
-import {CountdownComponent} from './countdown/countdown.component';
-import {SponsorsComponent} from './sponsors/sponsors.component';
-import {HexSnapContainer} from '../../elements/hex-snap-container/hex-snap-container';
+import { CountdownComponent } from './subscreens/countdown/countdown.component';
+import { HomeInfoComponent } from './subscreens/info/info.component';
+import { HomeLandingComponent } from './subscreens/landing/landing.component';
+import { HomeSponsorsComponent } from './subscreens/sponsors/sponsors.component';
 
 @Component({
   selector: 'cpjs-home',
@@ -16,15 +15,12 @@ import {HexSnapContainer} from '../../elements/hex-snap-container/hex-snap-conta
     class: 'cpjs-home',
   },
   imports: [
-    ContactComponent,
     CountdownComponent,
-    HexSnapContainer,
-    InfoComponent,
-    LandingComponent,
+    HomeHexSnapContainer,
+    HomeInfoComponent,
+    HomeLandingComponent,
+    HomeSponsorsComponent,
     NavBarComponent,
-    SponsorsComponent,
   ],
 })
-export class HomeComponent {
-
-}
+export class HomeComponent {}

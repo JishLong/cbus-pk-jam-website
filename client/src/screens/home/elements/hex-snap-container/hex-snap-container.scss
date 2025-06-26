@@ -1,0 +1,72 @@
+:root {
+  --cpjs-home-hex-snap-container-content-background: white;
+  --cpjs-home-hex-snap-container-content-background-opacity: 1;
+  --cpjs-home-hex-snap-container-angle: 5deg;
+
+  --cpjs-home-hex-snap-container-min-height: calc(50vw * tan(var(--cpjs-home-hex-snap-container-angle)));
+}
+
+.cpjs-home-hex-snap-container-content {
+  min-height: var(--cpjs-home-hex-snap-container-min-height);
+}
+
+.cpjs-home-hex-snap-container-background-male,
+.cpjs-home-hex-snap-container-background-female {
+  overflow-x: clip;
+
+  background: var(--cpjs-home-hex-snap-container-content-background);
+  opacity: var(--cpjs-home-hex-snap-container-content-background-opacity);
+}
+
+.cpjs-home-hex-snap-container-background-female,
+.cpjs-home-hex-snap-container-background-male-left,
+.cpjs-home-hex-snap-container-background-male-right {
+  &::before, &::after {
+    content: '';
+
+    position: absolute;
+    inset: 0;
+
+    background: inherit;
+  }
+}
+
+.cpjs-home-hex-snap-container-background-male-left,
+.cpjs-home-hex-snap-container-background-male-right {
+  background: inherit;
+}
+
+.cpjs-home-hex-snap-container-background-male-left {
+  &::before {
+    // Weird translateX to fitch a stitching issue
+    transform: translateX(calc(-1 * calc(50% - 1px))) skewY(calc(-1 * var(--cpjs-home-hex-snap-container-angle)));
+  }
+
+  &::after {
+    transform: translateX(calc(-1 * calc(50% - 1px))) skewY(var(--cpjs-home-hex-snap-container-angle));
+  }
+}
+
+.cpjs-home-hex-snap-container-background-male-right {
+  &::before {
+    transform: translateX(50%) skewY(calc(-1 * var(--cpjs-home-hex-snap-container-angle)));
+  }
+
+  &::after {
+    transform: translateX(50%) skewY(var(--cpjs-home-hex-snap-container-angle));
+  }
+}
+
+.cpjs-home-hex-snap-container-background-female {
+  &::before {
+    transform: skewY(calc(-1 * var(--cpjs-home-hex-snap-container-angle)));
+  }
+
+  &::after {
+    transform: skewY(var(--cpjs-home-hex-snap-container-angle));
+  }
+}
+
+.cpjs-home-hex-snap-container-separator-space {
+  height: var(--cpjs-home-hex-snap-container-min-height);
+}

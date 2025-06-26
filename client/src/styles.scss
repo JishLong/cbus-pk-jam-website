@@ -1,6 +1,9 @@
-@use "style/components/landing";
+@use "style/components/screens/home/landing";
+@use "style/common/dimensionality";
 @use "style/common/element-transition";
 @use "style/common/layout";
+@use "style/common/spacing";
+@use "style/common/position";
 @use "style/common/z-index";
 @use "style/theme/theme";
 

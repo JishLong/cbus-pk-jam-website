@@ -1,25 +1,18 @@
 :root {
   --cpjf-nav-bar-top-wrapper-height: 24px;
 
-  --cpjf-nav-bar-background-color: linear-gradient(to right, var(--cpj-main-dark-70), var(--cpj-main-dark-80));
-  --cpjf-nav-bar-link-normal-color: var(--cpj-main-light-70);
-  --cpjf-nav-bar-link-hovered-color: var(--cpj-main-neutral);
-  --cpjf-nav-bar-link-active-color: var(--cpj-main-dark-20);
+  --cpjf-nav-bar-background-color: linear-gradient(to right, var(--cpj-main-dark-60), var(--cpj-main-dark-80));
   --cpjf-nav-bar-box-shadow: 0 0 8px 4px var(--cpj-black);
 }
 
 .cpjf-nav-bar {
-  position: fixed;
-  top: 0;
-  max-height: 100vh;
   z-index: var(--cpj-z-index-nav-bar);
 
-
+  animation: cpjf-nav-bar-fade-in 1s both 1s;
   @keyframes cpjf-nav-bar-fade-in {
     0% { opacity: 0; }
     100% { opacity: 1; }
   }
-  animation: cpjf-nav-bar-fade-in 1s both 1s;
 }
 
 .cpjf-nav-bar-top-wrapper {
@@ -29,30 +22,8 @@
   box-shadow: var(--cpjf-nav-bar-box-shadow);
 }
 
-.cpjf-nav-bar-instagram-button.cpje-instagram-button {
-  --cpje-instagram-button-width: var(--cpjf-nav-bar-top-wrapper-height);
-
-  line-height: var(--cpjf-nav-bar-top-wrapper-height);
-}
-
-.cpjf-nav-bar-link {
-  all: unset;
-
-  margin: 0 var(--cpj-margin-7);
-
-  color: var(--cpjf-nav-bar-link-normal-color);
-  text-decoration: none;
-  cursor: pointer;
-
-  transition: color var(--cpj-transition-time-2);
-
-  &:hover {
-    color: var(--cpjf-nav-bar-link-hovered-color);
-  }
-
-  &:active {
-    color: var(--cpjf-nav-bar-link-active-color);
-  }
+.cpjf-nav-bar-double-gap {
+  gap: calc(2 * var(--cpj-gap-7));
 }
 
 .cpjf-nav-bar-logo {
@@ -63,5 +34,16 @@
 
   &:hover {
     transform: scale(1.1);
+  }
+}
+
+button.cpjf-nav-bar-drawer-button {
+  padding: var(--cpj-padding-1) var(--cpj-padding-3);
+
+  // The text is quite long on this button and looks weird on super small widths
+  &.cpjf-nav-bar-drawer-button-schedule {
+    .cpje-button-suffix-wrapper {
+      flex: 0 0 0;
+    }
   }
 }

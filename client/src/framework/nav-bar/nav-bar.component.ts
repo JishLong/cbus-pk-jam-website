@@ -1,7 +1,8 @@
 import { Component, computed, inject, signal, ViewEncapsulation } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { IconButtonComponent } from '../../elements/icon-button/icon-button.component';
-import { InstagramButtonComponent } from '../../elements/instagram-button/instagram-button.component';
+import { ButtonComponent } from '../../elements/button/button.component';
+import { IconComponent } from '../../elements/icon/icon.component';
+import { OpenLinkDirective } from '../../elements/open-link/open-link.directive';
+import { SvgComponent } from '../../elements/svg/svg.component';
 import { NavigateToDirective } from '../navigation/navigate-to.directive';
 import { ScreenResponsivenessService } from '../screen-responsiveness/screen-responsiveness.service';
 import { NavBarDrawerComponent } from './drawer/nav-bar-drawer.component';
@@ -15,14 +16,15 @@ const DRAWER_OPENED_ICON = 'close';
   styleUrl: 'nav-bar.component.scss',
   encapsulation: ViewEncapsulation.None,
   host: {
-    class: 'cpjf-nav-bar cpj-fill-width cpj-flex-column',
+    class: 'cpjf-nav-bar cpj-position-fixed cpj-top cpj-fill-width cpj-flex-column',
   },
   imports: [
-    IconButtonComponent,
-    InstagramButtonComponent,
+    ButtonComponent,
+    IconComponent,
     NavBarDrawerComponent,
     NavigateToDirective,
-    RouterLink
+    OpenLinkDirective,
+    SvgComponent,
   ],
 })
 export class NavBarComponent {
@@ -35,8 +37,4 @@ export class NavBarComponent {
     this.drawerOpened() ? DRAWER_OPENED_ICON : DRAWER_CLOSED_ICON
   );
   protected readonly drawerOpened = signal(false);
-
-  protected onMenuButtonClicked() {
-    this.drawerOpened.update(value => !value);
-  }
 }

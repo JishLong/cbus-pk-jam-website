@@ -1,13 +1,40 @@
+:root {
+  --cpjs-home-subscreen-content-max-width: 1500px;
+  --cpjs-home-subscreen-title-paddng: 48px;
+  --cpjs-home-subscreen-title-font-size: 100px;
+  --cpjs-home-subscreen-title-line-height: 150px;
+}
+
 .cpjs-home-female-hex {
-  --cpje-hex-snap-container-content-background: linear-gradient(to right, var(--cpj-main-dark-70), var(--cpj-main-dark-80));
-  --cpje-hex-snap-container-content-background-opacity: 0.9;
+  --cpjs-home-hex-snap-container-content-background: linear-gradient(to right, var(--cpj-main-dark-60), var(--cpj-main-dark-80));
+  --cpjs-home-hex-snap-container-content-background-opacity: 0.9;
 
   color: var(--cpj-main-light-70);
 }
 
 .cpjs-home-male-hex {
-  --cpje-hex-snap-container-content-background: var(--cpj-main-light-70);
-  --cpje-hex-snap-container-content-background-opacity: 0.9;
+  --cpjs-home-hex-snap-container-content-background: var(--cpj-main-light-70);
+  --cpjs-home-hex-snap-container-content-background-opacity: 0.9;
 
   color: var(--cpj-main-dark-70);
+}
+
+.cpjs-home-subscreen-content {
+  max-width: var(--cpjs-home-subscreen-content-max-width);
+}
+
+.cpjs-home-subscreen-title {
+  padding: 0 var(--cpjs-home-subscreen-title-paddng);
+  font-size: var(--cpjs-home-subscreen-title-font-size);
+  line-height: var(--cpjs-home-subscreen-title-line-height);
+}
+
+.cpjs-home-highlighted-text {
+  color: var(--cpj-main-neutral);
+}
+
+.cpj-breakpoint-mobile-portrait {
+  --cpjs-home-subscreen-title-paddng: 0;
+  --cpjs-home-subscreen-title-font-size: 80px;
+  --cpjs-home-subscreen-title-line-height: 120px;
 }

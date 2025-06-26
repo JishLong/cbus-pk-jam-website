@@ -1,5 +1,6 @@
 .cpjf-nav-bar-drawer {
-  z-index: -1;
+  top: calc(var(--cpjf-nav-bar-top-wrapper-height) + var(--cpj-padding-7));
+  max-height: calc(100vh - var(--cpjf-nav-bar-top-wrapper-height) - var(--cpj-padding-7));
   overflow-y: auto;
   overflow-x: clip;
 
@@ -9,7 +10,8 @@
 
   transition:
     box-shadow var(--cpj-transition-time-5) ease,
-    transform var(--cpj-transition-time-5) ease;
+    transform var(--cpj-transition-time-5) ease,
+    display 1s ease;
 }
 
 .cpjf-nav-bar-drawer-opened {
