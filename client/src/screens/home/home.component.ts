@@ -4,6 +4,7 @@ import { NavBarComponent } from '../../framework/nav-bar/nav-bar.component';
 import { CountdownComponent } from './subscreens/countdown/countdown.component';
 import { HomeInfoComponent } from './subscreens/info/info.component';
 import { HomeLandingComponent } from './subscreens/landing/landing.component';
+import { HomeSpecialGuestsComponent } from './subscreens/special-guests/special-guests.component';
 import { HomeSponsorsComponent } from './subscreens/sponsors/sponsors.component';
 
 @Component({
@@ -19,6 +20,7 @@ import { HomeSponsorsComponent } from './subscreens/sponsors/sponsors.component'
     HomeHexSnapContainer,
     HomeInfoComponent,
     HomeLandingComponent,
+    HomeSpecialGuestsComponent,
     HomeSponsorsComponent,
     NavBarComponent,
   ],

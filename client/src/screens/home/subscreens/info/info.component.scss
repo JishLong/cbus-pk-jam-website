@@ -1,24 +1,12 @@
-button.cpjs-home-info-registration-button {
-  padding: var(--cpj-padding-1) var(--cpj-padding-3);
-}
-
 .cpj-breakpoint-mobile-portrait,
 .cpj-breakpoint-tablet-portrait,
 .cpj-breakpoint-desktop-portrait,
 .cpj-breakpoint-mobile-landscape {
-  .cpjs-home-info-title-wrapper {
+  .cpjs-home-special-guests-title-wrapper {
     flex-direction: column;
   }
 
-  .cpjs-home-info-content-wrapper {
-    flex-direction: column;
-  }
-
-  .cpjs-home-info-image-outer-wrapper {
+  .cpjs-home-special-guests cpjs-home-separator {
     width: 100%;
-  }
-
-  .cpjs-home-info-image {
-    position: static;
   }
 }
