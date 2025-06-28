@@ -1,0 +1,25 @@
+.cpj-breakpoint-mobile-portrait,
+.cpj-breakpoint-tablet-portrait,
+.cpj-breakpoint-desktop-portrait,
+.cpj-breakpoint-mobile-landscape {
+  .cpjs-home-registration-title-wrapper {
+    flex-direction: column;
+  }
+}
+
+.cpjs-home-registration .cpje-button {
+  display: inline;
+}
+
+.cpjs-home-registration-price-packages-wrapper {
+  margin-top: var(--cpj-margin-7);
+}
+
+.cpjs-home-registration-price-package-column {
+  max-width: var(--cpjs-home-registration-ticket-card-max-width);
+}
+
+.cpj-breakpoint-mobile-portrait .cpjs-home-registration-price-packages-wrapper {
+  flex-direction: column;
+  align-items: center;
+}

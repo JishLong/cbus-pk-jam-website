@@ -1,0 +1,8 @@
+.cpj-breakpoint-mobile-portrait,
+.cpj-breakpoint-tablet-portrait,
+.cpj-breakpoint-desktop-portrait,
+.cpj-breakpoint-mobile-landscape {
+  .cpjs-home-contact-title-wrapper {
+    flex-direction: column-reverse;
+  }
+}

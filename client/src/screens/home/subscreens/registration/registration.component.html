@@ -1,0 +1,88 @@
+<div class="cpjs-home-subscreen-content cpj-fill-width cpj-flex-column cpj-gap-7 cpj-padding-7">
+  <div class="cpjs-home-registration-title-wrapper cpj-flex-row cpj-align-center cpj-text-align-center">
+    <span cpjeElementTransition="cpj-element-transition-start-big"
+          class="cpjs-home-subscreen-title cpj-script-2"
+    >
+      Registration
+    </span>
+    <cpjs-home-separator class="cpj-fill-width" />
+  </div>
+
+  <span cpjeElementTransition="cpj-element-transition-start-left">Select one of the ticket packages below to proceed
+    to payment. Be sure to check the
+    <button class="cpj-title-3" cpjeButton="ghost-dark-text" cpjfNavigateTo="cpjf-navigation-marker-schedule">
+      schedule
+    </button>
+    for each day before committing to a package. Overnight stays will be facilitated by and held in the
+    <button class="cpj-title-3" cpjeButton="ghost-dark-text" cpjfNavigateTo="cpjf-navigation-marker-sponsors">
+      Altitude Martial Arts gym.
+    </button>
+    If you choose one of the packages that include overnight stays, remember to bring sleeping materials (such as
+    a sleeping bag) if needed.
+  </span>
+
+  <div class="cpjs-home-registration-price-packages-wrapper cpj-flex-row cpj-justify-center cpj-gap-7">
+    <div class="cpjs-home-registration-price-package-column cpj-fill-width cpj-flex-column cpj-align-center cpj-gap-7">
+      <span cpjeElementTransition="cpj-element-transition-start-small">Overnight Stays Included</span>
+      <div class="cpj-fill-width" cpjeElementTransition="cpj-element-transition-start-big">
+        <button cpjsHomeRegistrationTicketCard title="Overnight Weekend Package" price="$70"
+                cpjeOpenLink="https://payhip.com/order?link=lGzNR&pricing_plan=PVBrp77DW8"
+        >
+          <cpje-bullet-point>Includes all Friday sessions</cpje-bullet-point>
+          <cpje-bullet-point>Includes all Saturday sessions</cpje-bullet-point>
+          <cpje-bullet-point>Includes all Sunday sessions</cpje-bullet-point>
+          <cpje-bullet-point>Includes both overnight stays in the gym (Friday and Saturday)</cpje-bullet-point>
+        </button>
+      </div>
+      <div class="cpj-fill-width" cpjeElementTransition="cpj-element-transition-start-big">
+        <button cpjsHomeRegistrationTicketCard title="Overnight Fri/Sat Package" price="$50"
+                cpjeOpenLink="https://payhip.com/order?link=lGzNR&pricing_plan=YLBNxjjZWK"
+        >
+          <cpje-bullet-point>Includes all Friday sessions</cpje-bullet-point>
+          <cpje-bullet-point>Includes all Saturday sessions</cpje-bullet-point>
+          <cpje-bullet-point>Includes the Friday overnight stay in the gym</cpje-bullet-point>
+        </button>
+      </div>
+      <div class="cpj-fill-width" cpjeElementTransition="cpj-element-transition-start-big">
+        <button cpjsHomeRegistrationTicketCard title="Overnight Sat/Sun Package" price="$45"
+                cpjeOpenLink="https://payhip.com/order?link=lGzNR&pricing_plan=bxGaayy5GD"
+        >
+          <cpje-bullet-point>Includes all Saturday sessions</cpje-bullet-point>
+          <cpje-bullet-point>Includes all Sunday sessions</cpje-bullet-point>
+          <cpje-bullet-point>Includes the Saturday overnight stay in the gym</cpje-bullet-point>
+        </button>
+      </div>
+      <div></div>
+    </div>
+    <cpjs-home-separator [orientation]="isMobile() ? 'horizontal' : 'vertical'" />
+    <div class="cpjs-home-registration-price-package-column cpj-fill-width cpj-flex-column cpj-align-center cpj-gap-7">
+      <span cpjeElementTransition="cpj-element-transition-start-small">No Overnight Stays</span>
+      <div class="cpj-fill-width" cpjeElementTransition="cpj-element-transition-start-big">
+        <button cpjsHomeRegistrationTicketCard title="Standard Weekend Package" price="$60"
+                cpjeOpenLink="https://payhip.com/order?link=lGzNR&pricing_plan=1yz44KKqzp"
+        >
+          <cpje-bullet-point>Includes all Friday sessions</cpje-bullet-point>
+          <cpje-bullet-point>Includes all Saturday sessions</cpje-bullet-point>
+          <cpje-bullet-point>Includes all Sunday sessions</cpje-bullet-point>
+        </button>
+      </div>
+      <div class="cpj-fill-width" cpjeElementTransition="cpj-element-transition-start-big">
+        <button cpjsHomeRegistrationTicketCard title="Standard Fri/Sat Package" price="$45"
+                cpjeOpenLink="https://payhip.com/order?link=lGzNR&pricing_plan=w9B3PdddGR"
+        >
+          <cpje-bullet-point>Includes all Friday sessions</cpje-bullet-point>
+          <cpje-bullet-point>Includes all Saturday sessions</cpje-bullet-point>
+        </button>
+      </div>
+      <div class="cpj-fill-width" cpjeElementTransition="cpj-element-transition-start-big">
+        <button cpjsHomeRegistrationTicketCard title="Standard Sat/Sun Package" price="$40"
+                cpjeOpenLink="https://payhip.com/order?link=lGzNR&pricing_plan=q3BodqqEGE"
+        >
+          <cpje-bullet-point>Includes all Saturday sessions</cpje-bullet-point>
+          <cpje-bullet-point>Includes all Sunday sessions</cpje-bullet-point>
+        </button>
+      </div>
+      <div><!-- Extra space for separator to extend downwards a bit --></div>
+    </div>
+  </div>
+</div>
