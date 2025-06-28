@@ -1,3 +1,28 @@
+.cpjs-home-contact .cpje-button.cpjs-home-contact-instagram-link {
+  display: inline;
+}
+
+.cpjs-home-contact form {
+  margin-top: var(--cpj-margin-7);
+}
+
+.cpjs-home-contact-success {
+  color: var(--cpj-green-neutral);
+}
+
+.cpjs-home-contact-error {
+  color: var(--cpj-red-neutral);
+}
+
+.cpjs-home-contact-submit-button-wrapper {
+  min-height: 84px;
+  margin-bottom: var(--cpj-margin-7);
+}
+
+.cpjs-home-contact-submit-button.cpje-button {
+  padding: var(--cpj-padding-1) var(--cpj-padding-3);
+}
+
 .cpj-breakpoint-mobile-portrait,
 .cpj-breakpoint-tablet-portrait,
 .cpj-breakpoint-desktop-portrait,

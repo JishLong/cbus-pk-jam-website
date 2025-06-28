@@ -1,0 +1,31 @@
+.cpje-form-field {
+  input, textarea {
+    all: unset;
+
+    padding: var(--cpj-padding-1) var(--cpj-padding-3);
+    background: linear-gradient(to right, var(--cpj-main-light-80), var(--cpj-main-light-60));
+    color: var(--cpj-main-dark-70);
+    border: 2px solid var(--cpj-main-neutral);
+    transition: box-shadow var(--cpj-transition-time-5);
+
+    &::placeholder {
+      color: var(--cpj-main-dark-70);
+      opacity: 0.25;
+    }
+
+    &:hover {
+      transition: none;
+      box-shadow: inset 0 0 8px 4px var(--cpj-main-neutral);
+    }
+  }
+
+  input {
+    border-radius: var(--cpj-border-radius-max);
+  }
+
+  textarea {
+    height: calc(5 * var(--cpj-body-1-line-height));
+    max-height: 600px;
+    border-radius: var(--cpj-border-radius-3);
+  }
+}

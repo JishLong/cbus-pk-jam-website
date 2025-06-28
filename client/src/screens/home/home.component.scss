@@ -21,6 +21,7 @@
 
 .cpjs-home-bottom-cap {
   height: var(--cpjs-home-hex-snap-container-min-height);
+  min-height: 56px;
   padding: var(--cpj-padding-3) var(--cpj-padding-7);
   background: linear-gradient(to right, var(--cpj-main-dark-60), var(--cpj-main-dark-80));
   box-shadow: 0 0 8px 4px var(--cpj-black);
