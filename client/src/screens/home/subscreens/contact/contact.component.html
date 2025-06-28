@@ -7,4 +7,62 @@
       Contact
     </span>
   </div>
+
+  <span cpjeElementTransition="cpj-element-transition-start-left">
+    Have questions? Offers? Concerns? Anything at all? Send us a message right here and we'll get back to you! Just
+    make sure to fill out the email field with your message or provide us with an alternate method of contact.
+  </span>
+  <span cpjeElementTransition="cpj-element-transition-start-left">
+    You can even just leave us feedback if you want - no name or email required.
+  </span>
+  <span cpjeElementTransition="cpj-element-transition-start-left">
+    Alternatively, you can reach out to us via Instagram at
+    <button class="cpjs-home-contact-instagram-link cpj-title-3" cpjeButton="ghost-light-text" cpjeOpenLink="https://www.instagram.com/columbuspkjam/">
+      {{ '@columbuspkjam.' }}
+    </button>
+  </span>
+
+  <form class="cpj-flex-column cpj-gap-3" [formGroup]="formGroup">
+    <cpje-form-field cpjeElementTransition="cpj-element-transition-start-small">
+      <span class="cpj-body-3">Name</span>
+      <input formControlName="name" placeholder="Enter name...">
+    </cpje-form-field>
+    <cpje-form-field cpjeElementTransition="cpj-element-transition-start-small">
+      <div class="cpj-flex-row cpj-gap-7">
+        @if (formGroup.get('email')?.valid) {
+          <span class="cpj-body-3">Email</span>
+        } @else {
+          <span class="cpjs-home-contact-error cpj-body-3">Please enter a valid email.</span>
+        }
+      </div>
+      <input formControlName="email" placeholder="Enter email...">
+    </cpje-form-field>
+    <cpje-form-field cpjeElementTransition="cpj-element-transition-start-small">
+      @if (formGroup.get('message')?.untouched || formGroup.get('message')?.valid) {
+        <span class="cpj-body-3">Message*</span>
+      } @else {
+        <span class="cpjs-home-contact-error cpj-body-3">A message is required.</span>
+      }
+      <textarea formControlName="message" placeholder="Enter message..."></textarea>
+    </cpje-form-field>
+  </form>
+
+  <div class="cpjs-home-contact-submit-button-wrapper cpj-flex-column cpj-justify-end cpj-align-center cpj-gap-1"
+       cpjeElementTransition="cpj-element-transition-start-big"
+  >
+    @if (sendEmailResponse?.(); as response) {
+      <span class="cpj-body-3" [class]="response.success ? 'cpjs-home-contact-success' : 'cpjs-home-contact-error'">
+        {{ response.success ? 'Message sent.' : 'Error sending message. Try again later.' }}
+      </span>
+    } @else if (sendEmailResponse) {
+      <span class="cpj-body-3">Sending message...</span>
+    }
+    <button class="cpjs-home-contact-submit-button cpj-fill-width"
+            cpjeButton="light"
+            [disabled]="!formGroup.valid"
+            (click)="sendEmail()"
+    >
+      Submit
+    </button>
+  </div>
 </div>

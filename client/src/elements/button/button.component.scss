@@ -28,69 +28,74 @@
     color var(--cpj-transition-time-5),
     fill var(--cpj-transition-time-5);
 
-  &:is(
-    .cpje-button-light,
-    .cpje-button-dark,
-    .cpje-button-ghost-light,
-    .cpje-button-ghost-dark
-  ):hover {
-    --cpje-button-background-left: var(--cpj-main-light-10);
-    --cpje-button-background-right: var(--cpj-main-dark-10);
+  &:disabled {
+    opacity: 0.25;
+  }
 
+  &:hover:not(:disabled) {
     transition: none;
+
+    &:is(
+      .cpje-button-light,
+      .cpje-button-dark,
+      .cpje-button-ghost-light,
+      .cpje-button-ghost-dark
+    ) {
+      --cpje-button-background-left: var(--cpj-main-light-10);
+      --cpje-button-background-right: var(--cpj-main-dark-10);
+    }
+
+    &:is(
+      .cpje-button-light-text,
+      .cpje-button-dark-text,
+      .cpje-button-ghost-light-text,
+      .cpje-button-ghost-dark-text
+    ) {
+      --cpje-button-color: var(--cpj-main-neutral);
+    }
   }
 
-  &:is(
-    .cpje-button-light-text,
-    .cpje-button-dark-text,
-    .cpje-button-ghost-light-text,
-    .cpje-button-ghost-dark-text
-  ):hover {
-    --cpje-button-color: var(--cpj-main-neutral);
+  &:active:not(:disabled) {
+    &:is(
+      .cpje-button-light,
+      .cpje-button-dark,
+      .cpje-button-ghost-light,
+      .cpje-button-ghost-dark
+    ) {
+      --cpje-button-background-left: var(--cpj-main-dark-20);
+      --cpje-button-background-right: var(--cpj-main-dark-40);
+    }
 
-    transition: none;
-  }
-
-  &:is(
-    .cpje-button-light,
-    .cpje-button-dark,
-    .cpje-button-ghost-light,
-    .cpje-button-ghost-dark
-  ):active {
-    --cpje-button-background-left: var(--cpj-main-dark-20);
-    --cpje-button-background-right: var(--cpj-main-dark-40);
-  }
-
-  &:is(
-    .cpje-button-light-text,
-    .cpje-button-dark-text,
-    .cpje-button-ghost-light-text,
-    .cpje-button-ghost-dark-text
-  ):active {
-    --cpje-button-color: var(--cpj-main-dark-30);
+    &:is(
+      .cpje-button-light-text,
+      .cpje-button-dark-text,
+      .cpje-button-ghost-light-text,
+      .cpje-button-ghost-dark-text
+    ) {
+      --cpje-button-color: var(--cpj-main-dark-30);
+    }
   }
 }
 
 .cpje-button-light, .cpje-button-dark-text {
   --cpje-button-background-left: var(--cpj-main-light-80);
   --cpje-button-background-right: var(--cpj-main-light-60);
-  --cpje-button-color: var(--cpj-main-dark-70);
 }
 
 .cpje-button-dark, .cpje-button-light-text {
   --cpje-button-background-left: var(--cpj-main-dark-60);
   --cpje-button-background-right: var(--cpj-main-dark-80);
+}
+
+.cpje-button-ghost-light, .cpje-button-ghost-light-text, .cpje-button-ghost-dark, .cpje-button-ghost-dark-text {
+  --cpje-button-background-left: transparent;
+  --cpje-button-background-right: transparent;
+}
+
+.cpje-button-dark, .cpje-button-light-text, .cpje-button-ghost-light, .cpje-button-ghost-light-text {
   --cpje-button-color: var(--cpj-main-light-70);
 }
 
-.cpje-button-ghost-light, .cpje-button-ghost-light-text {
-  --cpje-button-background-left: transparent;
-  --cpje-button-background-right: transparent;
-  --cpje-button-color: var(--cpj-main-light-70);
-}
-
-.cpje-button-ghost-dark, .cpje-button-ghost-dark-text {
-  --cpje-button-background-left: transparent;
-  --cpje-button-background-right: transparent;
+.cpje-button-light, .cpje-button-dark-text, .cpje-button-ghost-dark, .cpje-button-ghost-dark-text {
   --cpje-button-color: var(--cpj-main-dark-70);
 }
