@@ -1,0 +1,53 @@
+:root {
+  --cpjs-home-registration-ticket-card-max-width: 500px;
+  --cpjs-home-registration-ticket-card-height: 550px;
+}
+
+button.cpjs-home-registration-ticket-card {
+  all: unset;
+  width: 100%;
+  max-width: var(--cpjs-home-registration-ticket-card-max-width);
+  height: var(--cpjs-home-registration-ticket-card-height);
+  display: flex;
+  border-radius: var(--cpj-border-radius-3);
+  cursor: pointer;
+
+  background: linear-gradient(to right, var(--cpj-main-dark-60), var(--cpj-main-dark-80));
+  color: var(--cpj-main-light-70);
+  box-shadow: 4px -4px 16px 1px var(--cpj-main-dark-70);
+
+  transition: transform var(--cpj-transition-time-1);
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.cpjs-home-registration-ticket-card-title-wrapper,
+.cpjs-home-registration-ticket-card-price-wrapper {
+  background: linear-gradient(to right, var(--cpj-main-light-10), var(--cpj-main-dark-10));
+}
+
+.cpjs-home-registration-ticket-card-title-wrapper {
+  margin: var(--cpj-margin-7) 0;
+}
+
+.cpjs-home-registration-ticket-card-band-border {
+  height: 4px;
+  background: linear-gradient(to right, var(--cpj-main-dark-10), var(--cpj-main-dark-30));
+}
+
+.cpjs-home-registration-ticket-card-title {
+  padding: 0 var(--cpj-padding-7);
+}
+
+.cpjs-home-registration-ticket-card-price {
+  font-size: 72px;
+  line-height: 108px;
+}
+
+.cpj-breakpoint-tablet-portrait,
+.cpj-breakpoint-mobile-landscape,
+.cpj-breakpoint-mobile-portrait {
+  --cpjs-home-registration-ticket-card-height: 750px;
+}
