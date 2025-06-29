@@ -12,7 +12,7 @@
     In Development for 2025!
 </h3>
 <p align="center">
-    v2025.2
+    v2025.3
 </p>
 <h3 align="center">
     Active Planning 
