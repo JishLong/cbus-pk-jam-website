@@ -1,5 +1,6 @@
-import { Component, DestroyRef, inject, ViewEncapsulation } from '@angular/core';
+import { Component, computed, DestroyRef, inject, ViewEncapsulation } from '@angular/core';
 import { ElementTransitionDirective } from '../../../../elements/element-transition/element-transition.directive';
+import { ScreenResponsivenessService } from '../../../../framework/screen-responsiveness/screen-responsiveness.service';
 import { CountdownService } from '../../../../utils/countdown/countdown.service';
 import { HomeSeparatorComponent } from '../../elements/separator/separator.component';
 import { CountdownCellComponent } from './countdown-cell/countdown-cell.component';
@@ -15,6 +16,12 @@ import { CountdownCellComponent } from './countdown-cell/countdown-cell.componen
   imports: [CountdownCellComponent, ElementTransitionDirective, HomeSeparatorComponent],
 })
 export class CountdownComponent {
+  private readonly breakpoints = inject(ScreenResponsivenessService).getActiveBreakpoints();
+
+  protected readonly isMobile = computed(() =>
+    this.breakpoints().some(b => b.name === 'mobile-portrait')
+  );
+
   private readonly COUNTDOWN_DATE = new Date('2025-08-15T00:00:00');
 
   protected readonly countdownTime = inject(CountdownService).getCountdownTime(

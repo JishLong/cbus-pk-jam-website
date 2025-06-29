@@ -1,7 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ButtonComponent } from '../../../../elements/button/button.component';
 import { ElementTransitionDirective } from '../../../../elements/element-transition/element-transition.directive';
-import { IconComponent } from '../../../../elements/icon/icon.component';
 import { OpenLinkDirective } from '../../../../elements/open-link/open-link.directive';
 import { NavigationMarkerDirective } from '../../../../framework/navigation/navigation-marker.directive';
 import { NAVIGATION_MARKER_TOKEN } from '../../../../framework/navigation/navigation.symbols';
@@ -31,7 +30,6 @@ import { HomeSeparatorComponent } from '../../elements/separator/separator.compo
     HomeScheduleSeeLocationButtonComponent,
     HomeScheduleTimeSlotComponent,
     HomeSeparatorComponent,
-    IconComponent,
     OpenLinkDirective,
   ],
 })

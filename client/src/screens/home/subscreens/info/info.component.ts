@@ -1,11 +1,12 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ButtonComponent } from '../../../../elements/button/button.component';
 import { ElementTransitionDirective } from '../../../../elements/element-transition/element-transition.directive';
-import { HomeFittedImageComponent } from '../../elements/fitted-image/fitted-image.component';
 import { IconComponent } from '../../../../elements/icon/icon.component';
+import { OpenLinkDirective } from '../../../../elements/open-link/open-link.directive';
 import { NavigationMarkerDirective } from '../../../../framework/navigation/navigation-marker.directive';
 import { NAVIGATION_MARKER_TOKEN } from '../../../../framework/navigation/navigation.symbols';
 import { NavigateToDirective } from '../../../../framework/navigation/navigate-to.directive';
+import { HomeFittedImageComponent } from '../../elements/fitted-image/fitted-image.component';
 import { HomeSeparatorComponent } from '../../elements/separator/separator.component';
 
 @Component({
@@ -30,6 +31,7 @@ import { HomeSeparatorComponent } from '../../elements/separator/separator.compo
     IconComponent,
     NavigateToDirective,
     HomeSeparatorComponent,
+    OpenLinkDirective,
   ],
 })
 export class HomeInfoComponent {}
