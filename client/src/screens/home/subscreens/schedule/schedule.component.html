@@ -1,10 +1,131 @@
 <div class="cpjs-home-subscreen-content cpj-fill-width cpj-flex-column cpj-gap-7 cpj-padding-7">
   <div class="cpjs-home-schedule-title-wrapper cpj-flex-row cpj-align-center">
-    <cpjs-home-separator class="cpj-fill-width" />
+    <cpjs-home-separator class="cpj-flex-grow" />
     <span cpjeElementTransition="cpj-element-transition-start-big"
-          class="cpjs-home-subscreen-title cpj-script-2"
+          class="cpjs-home-subscreen-title cpj-text-align-center cpj-script-2"
     >
-      Schedule
+      Schedule & Spots
     </span>
+  </div>
+
+  <span cpjeElementTransition="cpj-element-transition-start-left">
+    Below is the three-day schedule for Columbus Jam 2025, along with the corresponding locations for each time slot.
+    Some locations can be viewed in Google Street View!
+  </span>
+
+  <span cpjeElementTransition="cpj-element-transition-start-left">
+    Live updates regarding the schedule and the group's whereabouts will also be posted via Instagram during the jam
+    at
+    <button class="cpjs-home-schedule-instagram-link cpj-title-3" cpjeButton="ghost-light-text" cpjeOpenLink="https://www.instagram.com/columbuspkjam/">
+      {{ '@columbuspkjam.' }}
+    </button>
+  </span>
+
+  <div class="cpj-home-schedule-schedule-wrapper cpj-flex-column cpj-align-center cpj-gap-3">
+    <h1 class="cpj-text-align-center" cpjeElementTransition="cpj-element-transition-start-big">
+      Friday, August 15 - Glacier Ridge
+    </h1>
+    <cpjs-home-separator class="cpj-fill-width" cpjeElementTransition="cpj-element-transition-start-left" />
+    <cpjs-home-schedule-time-slot cpjeElementTransition="cpj-element-transition-start-left">
+      <span class="cpj-body-2">4:00 PM</span>
+      <span class="cpjs-home-schedule-mobile-text-center cpj-title-3">Glacier Ridge Metro Park</span>
+      <span class="cpjs-home-schedule-mobile-text-center cpj-body-2">9801 Hyland-Croy Rd, Plain City, OH 43064</span>
+      <cpjs-home-schedule-see-location-button link="https://maps.app.goo.gl/1wRGkA52X9pWqntv6" />
+    </cpjs-home-schedule-time-slot>
+    <cpjs-home-schedule-time-slot cpjeElementTransition="cpj-element-transition-start-right">
+      <span class="cpj-body-2">8:00 PM</span>
+      <span class="cpjs-home-schedule-mobile-text-center cpj-title-3">Altitude Martial Arts</span>
+      <span class="cpjs-home-schedule-mobile-text-center cpj-body-2">1673 Taylor Rd, Gahanna, OH 43230</span>
+      <cpjs-home-schedule-see-location-button link="https://maps.app.goo.gl/NQ9EcRthT3JnD74d9" />
+    </cpjs-home-schedule-time-slot>
+    <cpjs-home-schedule-time-slot cpjeElementTransition="cpj-element-transition-start-left">
+      <span class="cpj-body-2">Midnight</span>
+      <span class="cpjs-home-schedule-mobile-text-center cpjs-home-highlighted-text cpj-title-3">Lights Out</span>
+    </cpjs-home-schedule-time-slot>
+  </div>
+
+  <div class="cpj-home-schedule-schedule-wrapper cpj-flex-column cpj-align-center cpj-gap-3">
+    <h1 class="cpj-text-align-center" cpjeElementTransition="cpj-element-transition-start-big">
+      Saturday, August 16 - THE Ohio State University
+    </h1>
+    <cpjs-home-separator class="cpj-fill-width" cpjeElementTransition="cpj-element-transition-start-right" />
+    <cpjs-home-schedule-time-slot cpjeElementTransition="cpj-element-transition-start-right">
+      <span class="cpj-body-2"></span>
+      <span class="cpjs-home-schedule-mobile-text-center cpjs-home-highlighted-text cpj-title-3">Breakfast</span>
+      <span class="cpjs-home-schedule-mobile-text-center cpj-body-2">Take some time to get to OSU campus and grab some breakfast at Panera.</span>
+      <cpjs-home-schedule-see-location-button link="https://maps.app.goo.gl/QLFsg1u34jHTruy88" />
+    </cpjs-home-schedule-time-slot>
+    <cpjs-home-schedule-time-slot cpjeElementTransition="cpj-element-transition-start-left">
+      <span class="cpj-body-2">11:00 AM</span>
+      <span class="cpjs-home-schedule-mobile-text-center cpj-title-3">Hitchcock Hall</span>
+      <span class="cpjs-home-schedule-mobile-text-center cpj-body-2">2070 Neil Ave, Columbus, OH 43210</span>
+      <cpjs-home-schedule-see-location-button link="https://maps.app.goo.gl/LCE3qbAXjH85FdYo8" />
+    </cpjs-home-schedule-time-slot>
+    <cpjs-home-schedule-time-slot cpjeElementTransition="cpj-element-transition-start-right">
+      <span class="cpj-body-2">12:30 PM</span>
+      <span class="cpjs-home-schedule-mobile-text-center cpj-title-3">Enarson Classroom & Surroundings</span>
+      <span class="cpjs-home-schedule-mobile-text-center cpj-body-2">2009 Millikin Rd, Columbus, OH 43210</span>
+      <cpjs-home-schedule-see-location-button link="https://maps.app.goo.gl/n8tqbxjBCgn4KY969" />
+    </cpjs-home-schedule-time-slot>
+    <cpjs-home-schedule-time-slot cpjeElementTransition="cpj-element-transition-start-left">
+      <span class="cpj-body-2">2:00 PM</span>
+      <span class="cpjs-home-schedule-mobile-text-center cpjs-home-highlighted-text cpj-title-3">Lunch</span>
+      <span class="cpjs-home-schedule-mobile-text-center cpj-body-2">Take some time to grab lunch of split off to explore other spots.</span>
+    </cpjs-home-schedule-time-slot>
+    <cpjs-home-schedule-time-slot cpjeElementTransition="cpj-element-transition-start-right">
+      <span class="cpj-body-2">3:00 PM</span>
+      <span class="cpjs-home-schedule-mobile-text-center cpj-title-3">West Campus</span>
+      <span class="cpjs-home-schedule-mobile-text-center cpj-body-2">
+        We'll be exploring around the west campus area, including McCorkle Aquatic Pavilion, Cunz Hall, and the
+        Psychology Building.
+      </span>
+      <cpjs-home-schedule-see-location-button link="https://maps.app.goo.gl/hfJQ7rXD2qsxwe8r8" />
+    </cpjs-home-schedule-time-slot>
+    <cpjs-home-schedule-time-slot cpjeElementTransition="cpj-element-transition-start-left">
+      <span class="cpj-body-2">7:00 PM</span>
+      <span class="cpjs-home-schedule-mobile-text-center cpj-title-3">Altitude Martial Arts</span>
+      <span class="cpjs-home-schedule-mobile-text-center cpj-body-2">1673 Taylor Rd, Gahanna, OH 43230</span>
+      <cpjs-home-schedule-see-location-button link="https://maps.app.goo.gl/NQ9EcRthT3JnD74d9" />
+    </cpjs-home-schedule-time-slot>
+    <cpjs-home-schedule-time-slot cpjeElementTransition="cpj-element-transition-start-right">
+      <span class="cpj-body-2">7:30 PM</span>
+      <span class="cpjs-home-schedule-mobile-text-center cpj-title-3">Mobility Workshop</span>
+      <span class="cpjs-home-schedule-mobile-text-center cpj-body-2">Chris Green will be leading us through a mobility warm up.</span>
+    </cpjs-home-schedule-time-slot>
+    <cpjs-home-schedule-time-slot cpjeElementTransition="cpj-element-transition-start-left">
+      <span class="cpj-body-2">8:00 PM</span>
+      <span class="cpjs-home-schedule-mobile-text-center cpj-title-3">Open Gym</span>
+    </cpjs-home-schedule-time-slot>
+    <cpjs-home-schedule-time-slot cpjeElementTransition="cpj-element-transition-start-right">
+      <span class="cpj-body-2">Midnight</span>
+      <span class="cpjs-home-schedule-mobile-text-center cpjs-home-highlighted-text cpj-title-3">Lights Out</span>
+    </cpjs-home-schedule-time-slot>
+  </div>
+
+  <div class="cpj-home-schedule-schedule-wrapper cpj-flex-column cpj-align-center cpj-gap-3">
+    <h1 class="cpj-text-align-center" cpjeElementTransition="cpj-element-transition-start-big">
+      Sunday, August 17 - Greater Columbus Area
+    </h1>
+    <cpjs-home-separator class="cpj-fill-width" cpjeElementTransition="cpj-element-transition-start-left" />
+    <cpjs-home-schedule-time-slot cpjeElementTransition="cpj-element-transition-start-left">
+      <span class="cpj-body-2">11:00 AM</span>
+      <span class="cpjs-home-schedule-mobile-text-center cpjs-home-schedule-timeslot-title cpj-title-3">Worthington Walls</span>
+      <span class="cpjs-home-schedule-mobile-text-center cpj-body-2">6740 N High St, Columbus, OH 43085</span>
+    </cpjs-home-schedule-time-slot>
+    <cpjs-home-schedule-time-slot cpjeElementTransition="cpj-element-transition-start-right">
+      <span class="cpj-body-2">2:00 PM</span>
+      <span class="cpjs-home-schedule-mobile-text-center cpj-title-3">Fischer Homes Columbus Office</span>
+      <span class="cpjs-home-schedule-mobile-text-center cpj-body-2">7965 N High St #20, Columbus, OH 43235</span>
+      <cpjs-home-schedule-see-location-button link="https://maps.app.goo.gl/jSxtNhwswWHy3hmE8" />
+    </cpjs-home-schedule-time-slot>
+    <cpjs-home-schedule-time-slot cpjeElementTransition="cpj-element-transition-start-left">
+      <span class="cpj-body-2">4:00 PM</span>
+      <span class="cpjs-home-schedule-mobile-text-center cpj-title-3">UCH NaviGuide</span>
+      <span class="cpjs-home-schedule-mobile-text-center cpj-body-2">8000 Ravines Edge Ct Suite 300, Columbus, OH 43235</span>
+    </cpjs-home-schedule-time-slot>
+    <cpjs-home-schedule-time-slot cpjeElementTransition="cpj-element-transition-start-right">
+      <span class="cpj-body-2">6:00 PM</span>
+      <span class="cpjs-home-schedule-mobile-text-center cpjs-home-highlighted-text cpj-title-3">Say Goodbyes</span>
+    </cpjs-home-schedule-time-slot>
   </div>
 </div>

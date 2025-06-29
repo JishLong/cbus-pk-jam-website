@@ -9,7 +9,7 @@ export interface SendEmailResponse {
 }
 
 export const SEND_EMAIL_REQUEST_DEFAULT_VALUES: SendEmailRequest = {
-  name: 'No name given',
-  email: 'No email given',
-  message: 'No message given',
+  name: 'no name given',
+  email: 'no email given',
+  message: 'no message given',
 }
