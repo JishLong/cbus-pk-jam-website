@@ -5,7 +5,7 @@
     padding: var(--cpj-padding-1) var(--cpj-padding-3);
     background: linear-gradient(to right, var(--cpj-main-light-80), var(--cpj-main-light-60));
     color: var(--cpj-main-dark-70);
-    border: 2px solid var(--cpj-main-neutral);
+    border: 4px double var(--cpj-main-neutral);
     transition: box-shadow var(--cpj-transition-time-5);
 
     &::placeholder {
@@ -15,7 +15,7 @@
 
     &:hover {
       transition: none;
-      box-shadow: inset 0 0 8px 4px var(--cpj-main-neutral);
+      box-shadow: inset 0 0 8px 2px var(--cpj-main-neutral);
     }
   }
 

@@ -1,15 +1,7 @@
-.cpjs-home-separator-horizontal {
-  height: 1px;
-}
-
-.cpjs-home-separator-vertical {
-  width: 1px;
-}
-
 .cpjs-home-female-hex .cpjs-home-separator {
-  background: var(--cpj-main-light-70);
+  border: 1px dashed var(--cpj-main-light-70);
 }
 
 .cpjs-home-male-hex .cpjs-home-separator {
-  background: var(--cpj-main-dark-70);
+  border: 1px dashed var(--cpj-main-dark-70);
 }

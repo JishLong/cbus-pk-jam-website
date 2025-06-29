@@ -3,6 +3,7 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { ButtonComponent } from '../../../../elements/button/button.component';
 import { ElementTransitionDirective } from '../../../../elements/element-transition/element-transition.directive';
 import { FormFieldComponent } from '../../../../elements/form-field/form-field.component';
+import { IconComponent } from '../../../../elements/icon/icon.component';
 import { OpenLinkDirective } from '../../../../elements/open-link/open-link.directive';
 import { HomeSeparatorComponent } from '../../elements/separator/separator.component';
 import { EmailService } from '../../../../framework/email/email.service';
@@ -32,6 +33,7 @@ import { NAVIGATION_MARKER_TOKEN } from '../../../../framework/navigation/naviga
     FormFieldComponent,
     FormsModule,
     HomeSeparatorComponent,
+    IconComponent,
     OpenLinkDirective,
     ReactiveFormsModule,
   ],

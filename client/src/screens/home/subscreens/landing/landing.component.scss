@@ -72,12 +72,12 @@
   @keyframes cpjs-home-landing-date-fade-in {
     0% {
       opacity: 0;
-      transform: translateX(-50vw);
+      transform: scale(0);
       filter: blur(10px);
     }
     100% {
       opacity: 1;
-      transform: translateX(0);
+      transform: scale(1);
       filter: none;
     }
   }
