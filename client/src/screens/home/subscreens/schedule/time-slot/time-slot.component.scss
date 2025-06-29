@@ -1,0 +1,10 @@
+.cpjs-home-schedule-time-slot-grid {
+  display: grid;
+  grid-template-columns: 2fr 4fr 6fr 1fr;
+  grid-gap: var(--cpj-gap-7);
+}
+
+.cpj-breakpoint-mobile-portrait .cpjs-home-schedule-time-slot-grid {
+  grid-template-rows: auto auto auto auto;
+  grid-template-columns: auto;
+}

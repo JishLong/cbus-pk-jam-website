@@ -1,3 +1,15 @@
+.cpjs-home-schedule-instagram-link {
+  display: inline;
+}
+
+.cpj-home-schedule-schedule-wrapper {
+  margin-top: var(--cpj-margin-7);
+}
+
+.cpj-home-schedule-see-location {
+  justify-self: flex-end;
+}
+
 .cpj-breakpoint-mobile-portrait,
 .cpj-breakpoint-tablet-portrait,
 .cpj-breakpoint-desktop-portrait,
@@ -5,4 +17,12 @@
   .cpjs-home-schedule-title-wrapper {
     flex-direction: column-reverse;
   }
+
+  .cpjs-home-schedule cpjs-home-separator {
+    width: 100%;
+  }
+}
+
+.cpj-breakpoint-mobile-portrait .cpjs-home-schedule-mobile-text-center {
+  text-align: center;
 }
