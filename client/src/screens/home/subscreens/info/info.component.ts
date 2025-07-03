@@ -3,6 +3,7 @@ import { ButtonComponent } from '../../../../elements/button/button.component';
 import { ElementTransitionDirective } from '../../../../elements/element-transition/element-transition.directive';
 import { IconComponent } from '../../../../elements/icon/icon.component';
 import { OpenLinkDirective } from '../../../../elements/open-link/open-link.directive';
+import { TextButtonDirective } from '../../../../elements/button/text-button.directive';
 import { NavigationMarkerDirective } from '../../../../framework/navigation/navigation-marker.directive';
 import { NAVIGATION_MARKER_TOKEN } from '../../../../framework/navigation/navigation.symbols';
 import { NavigateToDirective } from '../../../../framework/navigation/navigate-to.directive';
@@ -32,6 +33,7 @@ import { HomeSeparatorComponent } from '../../elements/separator/separator.compo
     NavigateToDirective,
     HomeSeparatorComponent,
     OpenLinkDirective,
+    TextButtonDirective,
   ],
 })
 export class HomeInfoComponent {}

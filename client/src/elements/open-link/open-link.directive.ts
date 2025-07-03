@@ -1,7 +1,7 @@
 import { Directive, input } from '@angular/core';
 
 @Directive({
-  selector: 'button[cpjeOpenLink]',
+  selector: '[cpjeOpenLink]',
   host: {
     '(click)': 'openLink()',
   },
