@@ -2,7 +2,7 @@ import { Directive, input } from '@angular/core';
 import { NavigationMarker } from './navigation.symbols';
 
 @Directive({
-  selector: 'button[cpjfNavigateTo]',
+  selector: '[cpjfNavigateTo]',
   host: {
     '(click)': 'navigateTo()',
   },
