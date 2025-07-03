@@ -8,6 +8,7 @@
 
 .cpjs-home-hex-snap-container-content {
   min-height: var(--cpjs-home-hex-snap-container-min-height);
+  overflow-x: clip;
 }
 
 .cpjs-home-hex-snap-container-background-male,
@@ -23,6 +24,7 @@
 .cpjs-home-hex-snap-container-background-male-right {
   &::before, &::after {
     content: '';
+    will-change: transform;
 
     position: absolute;
     inset: 0;
