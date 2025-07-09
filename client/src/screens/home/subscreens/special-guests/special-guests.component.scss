@@ -1,9 +1,21 @@
+.cpjs-home-special-guests-content-wrapper {
+  margin: var(--cpj-margin-7) 0;
+}
+
 .cpj-breakpoint-mobile-portrait,
 .cpj-breakpoint-tablet-portrait,
 .cpj-breakpoint-desktop-portrait,
 .cpj-breakpoint-mobile-landscape {
   .cpjs-home-special-guests-title-wrapper {
     flex-direction: column;
+  }
+
+  .cpjs-home-special-guests-content-column {
+    flex-direction: column;
+  }
+
+  .cpjs-home-special-guests-content-column-reverse {
+    flex-direction: column-reverse;
   }
 
   .cpjs-home-special-guests cpjs-home-separator {
