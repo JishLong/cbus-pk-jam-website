@@ -1,3 +1,5 @@
 export type SvgType =
   'facebook' |
-  'instagram';
+  'instagram' |
+  'tiktok' |
+  'youtube';

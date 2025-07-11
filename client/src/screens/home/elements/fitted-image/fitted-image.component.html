@@ -1,3 +1,16 @@
-<div class="cpjs-home-fitted-image-image-wrapper cpj-fill-dimensions cpj-flex-grow cpj-flex-row">
-  <img class="cpjs-home-fitted-image-image cpj-fill-dimensions" [src]="src()" alt="" />
+<div class="cpjs-home-fitted-image-image-wrapper cpj-position-relative cpj-fill-dimensions cpj-flex-grow
+  cpj-flex-row cpj-justify-center"
+>
+  @if (objectFit() === 'cover') {
+    <ng-container *ngTemplateOutlet="image" />
+  } @else {
+    <div class="cpjs-home-fitted-image-shadow-container cpj-position-absolute cpj-fill-height">
+      <ng-container *ngTemplateOutlet="image" />
+    </div>
+  }
 </div>
+
+<ng-template #image>
+  <img class="cpjs-home-fitted-image-image cpj-position-absolute cpj-z-index-behind cpj-fill-dimensions"
+       [src]="src()" alt="" />
+</ng-template>
