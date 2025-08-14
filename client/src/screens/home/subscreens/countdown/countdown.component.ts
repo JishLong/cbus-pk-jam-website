@@ -22,7 +22,7 @@ export class CountdownComponent {
     this.breakpoints().some(b => b.name === 'mobile-portrait')
   );
 
-  private readonly COUNTDOWN_DATE = new Date('2025-08-15T00:00:00');
+  private readonly COUNTDOWN_DATE = new Date('2025-08-15T20:00:00.000Z');
 
   protected readonly countdownTime = inject(CountdownService).getCountdownTime(
     this.COUNTDOWN_DATE, inject(DestroyRef)
