@@ -5,10 +5,7 @@ import { CountdownComponent } from './subscreens/countdown/countdown.component';
 import { HomeContactComponent } from './subscreens/contact/contact.component';
 import { HomeInfoComponent } from './subscreens/info/info.component';
 import { HomeLandingComponent } from './subscreens/landing/landing.component';
-import { HomeRegistrationComponent } from './subscreens/registration/registration.component';
 import { HomeScheduleComponent } from './subscreens/schedule/schedule.component';
-import { HomeSpecialGuestsComponent } from './subscreens/special-guests/special-guests.component';
-import { HomeSponsorsComponent } from './subscreens/sponsors/sponsors.component';
 
 @Component({
   selector: 'cpjs-home',
@@ -24,10 +21,7 @@ import { HomeSponsorsComponent } from './subscreens/sponsors/sponsors.component'
     HomeContactComponent,
     HomeInfoComponent,
     HomeLandingComponent,
-    HomeRegistrationComponent,
     HomeScheduleComponent,
-    HomeSpecialGuestsComponent,
-    HomeSponsorsComponent,
     NavBarComponent,
   ],
 })

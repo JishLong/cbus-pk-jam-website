@@ -20,6 +20,17 @@
   padding: var(--cpj-padding-3) var(--cpj-padding-7);
   background: var(--cpjf-nav-bar-background-color);
   box-shadow: var(--cpjf-nav-bar-box-shadow);
+  position: relative;
+}
+
+.cpjf-nav-bar-logo-left {
+  position: absolute;
+  left: var(--cpj-padding-7);
+}
+
+.cpjf-nav-bar-instagram-right {
+  position: absolute;
+  right: var(--cpj-padding-7);
 }
 
 .cpjf-nav-bar-double-gap {
