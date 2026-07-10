@@ -1,13 +1,17 @@
-<div class="cpjf-nav-bar-top-wrapper cpj-flex-row">
-  <div class="cpj-flex-row">
-    <button
-      cpjeButton="ghost-light-text"
-      class="cpj-flex-row"
-      cpjeOpenLink="https://www.instagram.com/columbuspkjam/"
-    >
-      <cpje-svg type="instagram" dimensions="var(--cpjf-nav-bar-top-wrapper-height)" />
+<div class="cpjf-nav-bar-top-wrapper cpj-flex-row cpj-align-center">
+  @if (isMobile()) {
+    <button cpjeButton="ghost-light-text" (click)="drawerOpened.set(!drawerOpened())">
+      <cpje-icon [icon]="drawerButtonIcon()" />
     </button>
-  </div>
+  } @else {
+    <button
+      class="cpjf-nav-bar-logo cpjf-nav-bar-logo-left cpj-script-1"
+      cpjeButton="ghost-light-text"
+      cpjfNavigateTo="cpjf-navigation-marker-landing"
+    >
+      Columbus Jam
+    </button>
+  }
 
   <div class="cpjf-nav-bar-double-gap cpj-flex-row cpj-flex cpj-justify-center cpj-align-center">
     @if (!isMobile()) {
@@ -15,29 +19,23 @@
         <button class="cpj-body-3" cpjeButton="ghost-light-text" cpjfNavigateTo="cpjf-navigation-marker-info">
           Info
         </button>
-        <button class="cpj-body-3" cpjeButton="ghost-light-text" cpjfNavigateTo="cpjf-navigation-marker-sponsors">
-          Sponsors
-        </button>
-        <button class="cpj-body-3" cpjeButton="ghost-light-text" cpjfNavigateTo="cpjf-navigation-marker-special-guests">
-          Special Guests
-        </button>
       </div>
     }
-    <button
-      class="cpjf-nav-bar-logo cpj-script-1"
-      cpjeButton="ghost-light-text"
-      cpjfNavigateTo="cpjf-navigation-marker-landing"
-    >
-      Columbus Jam
-    </button>
+    @if (isMobile()) {
+      <button
+        class="cpjf-nav-bar-logo cpj-script-1"
+        cpjeButton="ghost-light-text"
+        cpjfNavigateTo="cpjf-navigation-marker-landing"
+      >
+        Columbus Jam
+      </button>
+    } @else {
+      <button class="cpj-body-3" cpjeButton="ghost-light-text" cpjfNavigateTo="cpjf-navigation-marker-schedule">
+        Schedule & Spots
+      </button>
+    }
     @if (!isMobile()) {
       <div class="cpjf-nav-bar-double-gap cpj-flex-row cpj-flex">
-        <button class="cpj-body-3" cpjeButton="ghost-light-text" cpjfNavigateTo="cpjf-navigation-marker-schedule">
-          Schedule & Spots
-        </button>
-        <button class="cpj-body-3" cpjeButton="ghost-light-text" cpjfNavigateTo="cpjf-navigation-marker-registration">
-          Registration
-        </button>
         <button class="cpj-body-3" cpjeButton="ghost-light-text" cpjfNavigateTo="cpjf-navigation-marker-contact">
           Contact
         </button>
@@ -45,15 +43,22 @@
     }
   </div>
 
-  <div class="cpj-flex-row cpj-justify-end cpj-align-center">
-    @if (isMobile()) {
-      <button cpjeButton="ghost-light-text" (click)="drawerOpened.set(!drawerOpened())">
-        <cpje-icon [icon]="drawerButtonIcon()" />
-      </button>
-    } @else {
-      <div style="width: 24px;"></div>
-    }
-  </div>
+  @if (!isMobile()) {
+    <button
+      class="cpjf-nav-bar-instagram-right"
+      cpjeButton="ghost-light-text"
+      cpjeOpenLink="https://www.instagram.com/columbuspkjam/"
+    >
+      <cpje-svg type="instagram" dimensions="var(--cpjf-nav-bar-top-wrapper-height)" />
+    </button>
+  } @else {
+    <button
+      cpjeButton="ghost-light-text"
+      cpjeOpenLink="https://www.instagram.com/columbuspkjam/"
+    >
+      <cpje-svg type="instagram" dimensions="var(--cpjf-nav-bar-top-wrapper-height)" />
+    </button>
+  }
 </div>
 
 @if (isMobile()) {
@@ -65,33 +70,12 @@
       <span cpjPrefix>Info</span>
       <cpje-icon cpjSuffix icon="info" />
     </button>
-    <button class="cpjf-nav-bar-drawer-button"
-            cpjeButton="light"
-            cpjfNavigateTo="cpjf-navigation-marker-sponsors"
-            (click)="drawerOpened.set(false)">
-      <span cpjPrefix>Sponsors</span>
-      <cpje-icon cpjSuffix icon="favorite" />
-    </button>
-    <button class="cpjf-nav-bar-drawer-button"
-            cpjeButton="light"
-            cpjfNavigateTo="cpjf-navigation-marker-special-guests"
-            (click)="drawerOpened.set(false)">
-      <span cpjPrefix>Special Guests</span>
-      <cpje-icon cpjSuffix icon="person" />
-    </button>
     <button class="cpjf-nav-bar-drawer-button cpjf-nav-bar-drawer-button-schedule"
             cpjeButton="light"
             cpjfNavigateTo="cpjf-navigation-marker-schedule"
             (click)="drawerOpened.set(false)">
       <span cpjPrefix>Schedule & Spots</span>
       <cpje-icon cpjSuffix icon="park" />
-    </button>
-    <button class="cpjf-nav-bar-drawer-button"
-            cpjeButton="light"
-            cpjfNavigateTo="cpjf-navigation-marker-registration"
-            (click)="drawerOpened.set(false)">
-      <span cpjPrefix>Registration</span>
-      <cpje-icon cpjSuffix icon="sell" />
     </button>
     <button class="cpjf-nav-bar-drawer-button"
             cpjeButton="light"
