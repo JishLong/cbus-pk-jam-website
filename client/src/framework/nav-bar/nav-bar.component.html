@@ -21,9 +21,19 @@
         </button>
       </div>
     }
-    <button class="cpj-body-3" cpjeButton="ghost-light-text" cpjfNavigateTo="cpjf-navigation-marker-schedule">
-      Schedule & Spots
-    </button>
+    @if (isMobile()) {
+      <button
+        class="cpjf-nav-bar-logo cpj-script-1"
+        cpjeButton="ghost-light-text"
+        cpjfNavigateTo="cpjf-navigation-marker-landing"
+      >
+        Columbus Jam
+      </button>
+    } @else {
+      <button class="cpj-body-3" cpjeButton="ghost-light-text" cpjfNavigateTo="cpjf-navigation-marker-schedule">
+        Schedule & Spots
+      </button>
+    }
     @if (!isMobile()) {
       <div class="cpjf-nav-bar-double-gap cpj-flex-row cpj-flex">
         <button class="cpj-body-3" cpjeButton="ghost-light-text" cpjfNavigateTo="cpjf-navigation-marker-contact">
